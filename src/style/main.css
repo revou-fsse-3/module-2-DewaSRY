@@ -1,0 +1,50 @@
+:root {
+    --primary: #CDF5FD;
+    --secondary: #A8DF8E;
+    --three: #FFF6F6;
+    --four: #000000;
+    --five: #C3C4C0;
+
+
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.00) 100%), #000000;
+
+    --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+
+    
+  }
+  
+  [data-theme="dark"] {
+    --primary: #0E8388;
+    --secondary: #116D6E;
+    --three: #030015;
+    --four: #FFFFFF;
+    --five: #282827;
+
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.00) 100%), #282827;
+
+
+
+    --background: #121212;
+  }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    background-color: var(--background)
+}
+
+
+
+
+
+
+
+
+
+
+
+@import url(/src/style/components/navigation.css);
