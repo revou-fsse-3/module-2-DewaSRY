@@ -7,7 +7,7 @@
 
 <p align="center">
 
-  <a href="https://main--sprightly-banoffee-3b7821.netlify.app/" >
+  <a href="https://ubiquitous-horse-6f2aa0.netlify.app/" >
    <img src="./assets/week-1/TODO-HERO.jpg" width="150">
    <img src="./assets/week-1/TODO-FORM.jpg" width="150">
    <img src="./assets/week-1/TODO-CARD.jpg" width="150">
@@ -16,9 +16,8 @@
 
 ### ! tab the button below or image above is other option to go the web site
 
-- Netlify : [Link to go to the website, host by netlify](https://main--sprightly-banoffee-3b7821.netlify.app/)
+- Netlify : [Link to go to the website, host by netlify](https://ubiquitous-horse-6f2aa0.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2485ea32-7bad-4558-90cb-b41581a174da/deploy-status)](https://app.netlify.com/sites/sprightly-banoffee-3b7821/deploys)
 
 
 > ## TODO APP (Make your dream come True)
