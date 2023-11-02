@@ -1,0 +1,36 @@
+
+
+.hero{
+    overflow-x: hidden;
+    background:var(--background) ,url(/public/bg/bg-small.png) no-repeat ;
+    background-position: 50% 30%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    z-index: -1;
+
+}
+.hero> span{
+    display: inline-block;
+    width: 330px;
+    height: 180px;
+    margin-top:  5rem ;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255,0.5);
+    filter: blur(0.9);
+    border-radius: 30px;
+    z-index: 1;
+    border: solid 1px white;
+}
+
+
+.hero> span> p,
+.hero> span> h2{
+    padding-top: 1rem;
+    inline-size:  300px;
+    line-height: 1.2rem;
+    word-wrap: break-word;
+    margin: auto;
+    text-align: center;
+   
+}
