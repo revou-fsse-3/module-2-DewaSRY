@@ -34,3 +34,13 @@
     text-align: center;
    
 }
+
+@media screen and (min-width: 1200px) {
+    .hero{
+ 
+        background:var(--background) ,url(/public/bg/bg-big.png) no-repeat ;
+        background-position: 50% 30%;
+   
+    
+    }
+}
