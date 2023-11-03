@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'page-label';
+  font-style: normal;
+  font-display: swap;
+  line-height: 3rem;
+  src: url(/public/font/page-label.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'para';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  line-height: 1.5rem;
+  letter-spacing: 3px;
+
+  src: url(/public/font/para.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
     --primary: #55CCFF;
     --second: #8DFF84;
@@ -13,7 +33,7 @@
   [data-theme="dark"] {
     --primary: #0064FA;
     --second: #7795FF;
-    --three: #0E8388;
+    --three: #009db5;
     --four: #32508A;
     --five: #FFFFFF;
 
@@ -24,7 +44,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+
+}
 body{
+
   background:  var(--four);
 
 }
@@ -42,11 +67,12 @@ section{
   padding: 1rem;
   border-bottom: solid 1px var(--five);
   color: var(--five);
+  font-family: page-label;
+  transition: all 0.5s ease;
 }
 .page-title:hover{
-  transform: scaleX(1.5);
+  color: var(--primary);
 }
-
 
 
 

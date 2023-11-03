@@ -1,0 +1,19 @@
+
+
+
+
+@media screen and (min-width: 1600px) {
+    .notes-content{
+        display: grid;
+        grid-template-columns: 1fr 400px ;
+    }
+    .image-carousel-container{
+        grid-column:2/3 ;
+        grid-template-rows: repeat(auto-fit, minmax(0, 400px));
+    }
+
+    .notes{
+        grid-column:1/2;
+        grid-row: 1/2;
+    }
+}

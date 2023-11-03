@@ -32,6 +32,10 @@ padding: 2rem;
 cursor: pointer;
 }
 
+.footer> div> ul {
+  list-style: square inside url("/public/icon/Rocket.png");
+}
+
 .footer> div> div
 {
 flex-direction: row;
@@ -78,7 +82,7 @@ cursor: pointer;
     width: 250px;
     border-radius: 12px;
     background-color: var(--primary);
-    color: var(--four);
+    color: var(--five);
 }
 
 .rating {

@@ -45,6 +45,7 @@
 .note>p{
     top: 30%;
     margin: 0 25px;
+    font-family: para;
 }
 .note>button{
     position: absolute;
