@@ -1,0 +1,150 @@
+
+.notes{
+    margin:0 auto;
+    width: 100%;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    /* for responsive towards children  width */
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr)) ;
+    row-gap:1.2rem;
+    
+    place-content: center;
+    grid-row: 1rem;
+
+}
+
+.note{
+    width: 350px;
+    height: 700px;
+    margin: auto;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    background-color:var(--second) ;
+    border-radius: 30px;
+
+}
+.note >img{
+    border-radius: 30px;
+    margin: auto;
+}
+.note>h2,
+.note>p{
+    position: absolute;
+    inline-size:  300px;
+    line-height: 1.2rem;
+    word-wrap: break-word;
+    color: var(--five);
+}
+.note>h2{
+    top: 0.5rem;
+    left: 10%;
+}
+.note>p{
+    top: 30%;
+    margin: 0 25px;
+}
+.note>button{
+    position: absolute;
+    bottom: 0.2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 12px;
+    background-color: var(--three);
+    color: var(--five);
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.note>button:hover{
+    background-color: var(--primary);
+    border: none ;
+
+
+}
+.note>button:first-of-type{
+    right: 1rem;
+}
+.note>button:nth-of-type(2){
+    right: 8rem;
+}
+.note>img,
+.note>:not(img){
+    grid-column:1/3 ;
+}
+.note>img{
+    grid-row: 1/2;
+}
+.note>:not(img){
+    grid-row: 2/3;
+
+}
+
+@media screen and (min-width:700px) {
+    .notes{
+        grid-template-columns:repeat(auto-fit,minmax(700px,1fr)) ;
+    
+    }
+    .note{
+        width: 700px;
+        height: 350px;
+    
+    }
+    .note>img,
+    .note>:not(img){
+        grid-row :1/3 ;
+    }
+    .note>img{
+        grid-column: 1/2;
+
+    }
+    .note>:not(img){
+        grid-column: 2/3;
+    }
+}
+@media screen and (min-width:900px) {
+    .notes{
+        grid-template-columns:repeat(auto-fit,minmax(400px,1fr)) ;
+    
+    }
+    .note{
+        height: 700px;
+        width: 350px;
+    
+    }
+    .note>img,
+    .note>:not(img){
+        grid-column: 1/3;
+    }
+    .note>img{
+        grid-row: 1/2;
+
+    }
+    .note>:not(img){
+        grid-row: 2/3;
+
+    }
+}
+@media screen and (min-width:2400px) {
+    .notes{
+        grid-template-columns:repeat(auto-fit,minmax(700px,1fr)) ;
+    }
+    .note{
+
+        width: 700px;
+        height: 350px;
+    
+    }
+    .note>img,
+    .note>:not(img){
+        grid-row :1/3 ;
+    }
+    .note>img{
+        grid-column: 1/2;
+
+    }
+    .note>:not(img){
+        grid-column: 2/3;
+    }
+}

@@ -28,7 +28,24 @@ body{
   background:  var(--four);
 
 }
+section{
+  position: relative;
+  padding: 7rem 0;
 
+}
+
+.page-title{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  border-bottom: solid 1px var(--five);
+  color: var(--five);
+}
+.page-title:hover{
+  transform: scaleX(1.5);
+}
 
 
 

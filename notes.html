@@ -9,11 +9,16 @@
             <link rel="stylesheet" href="/src/style/main.css">
             <link rel="stylesheet" href="/src/style/components/navigation.css">
             <link rel="stylesheet" href="/src/style/components/hero.css">
-            <link rel="stylesheet" href="/src/style/components/dashboard.css">
             <link rel="stylesheet" href="/src/style/components/footer.css">
+            <link rel="stylesheet" href="/src/style/components/notes.css">
 
+   
+            <!-- Font-awesome -->
+   <!-- footer animate -->
+      
         </head>
         <body>
+  
 
 
             <header class="navigation">
@@ -34,17 +39,15 @@
                     </div>
 
                     <div class="navigation-list">
-                        <a href="/index.html">
+                        <a href="/index.html" >
                             <i class="fa-solid fa-house"></i>
                             <h2>Home</h2>
                         </a>
-                        <a href="/notes.html"class="active" >
+                        <a href="/notes.html"  class="active" >
                             <i class="fa-solid fa-list"></i>
                             <h2>Notes </h2>
                         </a>
-    
                     </div>
-
                     <div class="switch-mode">
                         <p>Light</p>
                         <p>Dark</p>
@@ -55,70 +58,58 @@
 
             </header>
             <main class="content">
-                <section class="hero">
-                    <span>
-                        <h2>Personal-Note Book</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eligendi autemprehenderit distinctio nulla perspiciatis quisquam fugit doloribus iure vel. Totam quaerat repellat sunt nisi?</p>
-                    </span>
-                </section>
-                <section class="dashboard">
+                <section id="destination-list" class="notes">
                     <span class="page-title">
-    
-                        <h1>Dashboard</h1>
+                        <h1>Note List</h1>
                     </span>
-                    <div class="card">
-                        <img src="/public/icon-ilustration/gallery.png" alt="gallery" width="180" height="180">
-                        <h2>Image</h2>
-                        <span>6</span>
+                    <!-- destination cards container  -->
+                    <div class="note">
+                        <img src="/public/tekno-img/tekno-1.png" alt="minang"width="300" height="300" >
+                        <h2>1. Rumah Gadang</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque commodi numquam molestiae modi nisi vero temporibus consequatur quasi, consectetur quas ipsam sequi facilis dignissimos, expedita repellendus ut. Ipsum, quo reprehenderit.</p>
+                        <button>Add To My Scadule</button>
                     </div>
-                    <div class="card">
-                        <img src="/public/icon-ilustration/crown.png" alt="gallery" width="180" height="180">
-                        <h2>Person</h2>
-                        <span>Name</span>
+                    
+                    <div class="note">
+                        <img src="/public/tekno-img/tekno-2.png" alt="minang" width="300" height="300">
+                        <h2>2. Papua forest</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque commodi numquam molestiae modi nisi vero temporibus consequatur quasi, consectetur quas ipsam sequi facilis dignissimos, expedita repellendus ut. Ipsum, quo reprehenderit.</p>
+                        <button>Add To My Scadule</button>
                     </div>
-                    <div class="card">
-                        <img src="/public/icon-ilustration/calendar.png" alt="gallery" width="180" height="180">
-                        <h2>Todo</h2>
-                        <span>9</span>
+            
+                    <div class="note">
+                        <img src="/public/tekno-img/tekno-3.png" alt="minang" width="300" height="300">
+                        <h2>3. Komodo flores</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque commodi numquam molestiae modi nisi vero temporibus consequatur quasi, consectetur quas ipsam sequi facilis dignissimos, expedita repellendus ut. Ipsum, quo reprehenderit.</p>
+                        <button>Add To My Scadule</button>
                     </div>
-                    <div class="card">
-                        <img src="/public/icon-ilustration/note.png" alt="gallery" width="180" height="180">
-                        <h2>Note</h2>
-                        <span>20</span>
+            
+                    <div class="note">
+                        <img src="/public/tekno-img/tekno-4.png" alt="minang" width="300" height="300">
+                        <h2>4. Bromo mountain</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque commodi numquam molestiae modi nisi vero temporibus consequatur quasi, consectetur quas ipsam sequi facilis dignissimos, expedita repellendus ut. Ipsum, quo reprehenderit.</p>
+                        <button>Add To My Scadule</button>
                     </div>
-                    <div class="pomodoro">
-                        <div class="pomodoro-time">
-                            <svg height="300" width="300">
-                                <circle
-                                  r="140"
-                                  cx="150"
-                                  cy="150"
-                                  fill="transparent"
-                                  stroke="white"
-                                  stroke-width="20"
-                                  transform="rotate(-90 150 150)"
-                          
-                                />
-                              </svg>
-
-                            <input id="duration" value="30" />
-                            <h2 class="">Pomodoro</h2>
-
-                        </div>
-                          <div class="pomodoro-control">
-                              <button id="reset">
-                                <i class="fa-solid fa-check"></i>
-                              </button>
-                              <button id="start">
-                                <i class="fa-solid fa-play"></i>
-                              </button>
-                              <button id="pause">
-                                <i class="fa-solid fa-pause"></i>
-                              </button>
-                          </div>
+            
+                    <div class="note">
+                        <img src="/public/tekno-img/tekno-5.png" alt="minang" width="300" height="300">
+                        <h2>5. Borobudur temple</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque commodi numquam molestiae modi nisi vero temporibus consequatur quasi, consectetur quas ipsam sequi facilis dignissimos, expedita repellendus ut. Ipsum, quo reprehenderit.</p>
+                        <button>Add To My Scadule</button>
                     </div>
+            
+                    <div class="note">
+                        <img src="/public/tekno-img/tekno-6.png" alt="minang" width="300" height="300">
+                        <h2>6. Kalimantan fores</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque commodi numquam molestiae modi nisi vero temporibus consequatur quasi, consectetur quas ipsam sequi facilis dignissimos, expedita repellendus ut. Ipsum, quo reprehenderit.</p>
+                        <button>Add To My Scadule</button>
+                    </div>
+            
+  
                 </section>
             </main>
+     
+
             <footer class="footer">
                         <div >
                             <h4>Ikuti Kami</h4>
@@ -181,7 +172,7 @@
                                 <button type="submit">Submit</button>
                             </form>
                         </div>
-            </footer>
+                    </footer>
 
 
 <script src="/src/components/togleMode.js"></script>

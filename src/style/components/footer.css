@@ -18,6 +18,8 @@
     align-items: center;
 
 }
+
+.footer> div> form,
 .footer> div> div,
 .footer> div> ul
 {
@@ -28,7 +30,6 @@ height: 300px;
 width: 100%;
 padding: 2rem;
 cursor: pointer;
-
 }
 
 .footer> div> div
@@ -53,4 +54,72 @@ cursor: pointer;
 cursor: pointer;
 
 }
+.footer> div> form{
+    max-width: 600px;
+    height: 600px;
+}
 
+.footer> div> form> label{
+    font-size: 1.2rem;
+    color: var(--five);
+}
+.footer> div> form> textarea,
+.footer> div> form> input{
+    border-radius: 7px;
+    padding: 1rem;
+
+}
+.footer> div> form> textarea{
+    resize: none;
+    height: 150px;
+}
+.footer> div> form> button{
+    padding: 0.5rem 1rem;
+    width: 250px;
+    border-radius: 12px;
+    background-color: var(--primary);
+    color: var(--four);
+}
+
+.rating {
+    --dir: right;
+    --fill: var(--primary);
+    --fillbg: rgba(100, 100, 100, 0.15);
+    --star: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.25l-6.188 3.75 1.641-7.031-5.438-4.734 7.172-0.609 2.813-6.609 2.813 6.609 7.172 0.609-5.438 4.734 1.641 7.031z"/></svg>');
+    --stars: 6;
+    --starsize: 2rem;
+    --symbol: var(--star);
+    --w: calc(var(--stars) * var(--starsize));
+    --x: calc(100% * (var(--value) / var(--stars)));
+    block-size: var(--starsize);
+    inline-size: var(--w);
+    position: relative;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    height: 3.5rem;
+  }
+  [dir="rtl"] .rating {
+    --dir: left;
+  }
+  .rating::-moz-range-track {
+    background: linear-gradient(to var(--dir), var(--fill) 0 var(--x), var(--fillbg) 0 var(--x));
+    block-size: 100%;
+    mask: repeat left center/var(--starsize) var(--symbol);
+  }
+  .rating::-webkit-slider-runnable-track {
+    background: linear-gradient(to var(--dir), var(--fill) 0 var(--x), var(--fillbg) 0 var(--x));
+    block-size: 100%;
+    mask: repeat left center/var(--starsize) var(--symbol);
+    -webkit-mask: repeat left center/var(--starsize) var(--symbol);
+  }
+  .rating::-moz-range-thumb {
+    height: var(--starsize);
+    opacity: 0;
+    width: var(--starsize);
+  }
+  .rating::-webkit-slider-thumb {
+    height: var(--starsize);
+    opacity: 0;
+    width: var(--starsize);
+    -webkit-appearance: none;
+  }
