@@ -19,10 +19,10 @@
 }
 
 :root {
-    --primary: #55CCFF;
-    --second: #8DFF84;
-    --three: #6AE5FE;
-    --four: #FFFFFF;
+    --primary: #6ff17c;
+    --second: #92bcff;
+    --three: #497ee8;
+    --four: #bddaf1;
     --five: #000000;
 
 
@@ -31,10 +31,10 @@
   }
   
   [data-theme="dark"] {
-    --primary: #0064FA;
-    --second: #7795FF;
-    --three: #009db5;
-    --four: #32508A;
+    --primary: #3306e4;
+    --second: #38619e;
+    --three: #048cab;
+    --four: #1e254d;
     --five: #FFFFFF;
 
     --background: linear-gradient(30deg, rgba(50, 80, 138,0.8),rgba(50, 80, 138,0.5));
@@ -51,6 +51,7 @@ html{
 body{
 
   background:  var(--four);
+  transition: color 1s ease-in-out;
 
 }
 section{

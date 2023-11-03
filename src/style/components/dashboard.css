@@ -80,14 +80,13 @@
     display: flex;
     justify-content: space-evenly;
 }
-.pomodoro-control i{
-    font-size: 3rem;
-    color: var(--five);
 
-}
 .pomodoro-control button{
     background-color: transparent;
     border: none;
+    font-size: 2rem;
+    color: var(--five);
+
 }
 .pomodoro-time{
     display: flex;

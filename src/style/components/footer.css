@@ -5,6 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 1rem 0;
 }
 .footer> div{
     flex-grow: 1;
@@ -12,11 +13,12 @@
     color: var(--five);
     margin: auto;
 }
-.footer> div> h4{
+.footer  h2{
     font-size: 2rem ;
     margin: 2rem 3rem;
     align-items: center;
-
+    padding: 1rem 0;
+    border-bottom: solid 2px var(--five);
 }
 
 .footer> div> form,
@@ -42,7 +44,7 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-around;
 }
-.footer> div> div>a> i
+.footer> div> div>a> svg
 {
 font-size: 3rem ;
 }
