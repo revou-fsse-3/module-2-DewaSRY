@@ -1,17 +1,13 @@
 
-
+/* display */
 .dashboard{
-    max-width: 1200px;
     margin: auto;
-    
-
     display: grid;
-
-    /* grid-template-columns: repeat(auto-fit,minmax(350px, 1fr)); */
     grid-template-columns: repeat(12,minmax(0, 1fr));
     row-gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 1200px;
 }
-
 
 .card,
 .pomodoro{
@@ -19,7 +15,7 @@
 }
 
 .card{
-    width:  350px;
+    min-width:  350px;
     height: 250px;
     position: relative;
     border-radius: 30px;

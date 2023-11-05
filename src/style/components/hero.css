@@ -1,42 +1,110 @@
 
 
 .hero{
-    overflow-x: hidden;
-    background-position: 50% 30%;
     display: flex;
     justify-content: center;
-    height: 600px;
     z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-rows: repeat(2, minmax(0,1fr));
+}
 
-    position: relative;
+.hero>picture,
+.hero>#quote-container{
+    grid-column: 1/3;
+}
+.hero>#quote-container{
+    grid-row: 1/2;
+}
+.hero>picture{
+    grid-row: 2/3;
+}
+.hero>picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
-.hero> span{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: inline-block;
-    width: 330px;
-    height: 180px;
-    margin-top:  5rem ;
-    padding: 1rem;
+.hero>picture>img{
+    width: 300px;
+    margin: auto;
+}
+ #quote-container{
+    margin: auto;
+    width:   90vw  ;
+
+
+    min-height: 200px;
+    padding: 2rem 1rem 0;
+
     background-color: rgba(255, 255, 255,0.5);
     filter: blur(0.9);
     border-radius: 30px;
     z-index: 1;
-    border: solid 1px white;
+    position: relative;
+}
+#quote-container>h2{
+    color: var(--five);
+    font-size: 1.2rem;
+    font-style: italic;
+}
+#quote-container>p{
+    position: absolute;
+    bottom: 4rem;
+    left: 0.5rem; 
+}
+#quote-container>button{
+    padding: 0.5rem;
+    border-radius: 13px;
+}
+#quote-container>button:first-of-type{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+}
+#quote-container>button:last-of-type{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background-image: linear-gradient(-30deg, black, gray);
+    color: white;
 }
 
 
-.hero> span> p,
-.hero> span> h2{
-    padding-top: 1rem;
-    inline-size:  300px;
-    line-height: 1.2rem;
-    word-wrap: break-word;
-    margin: auto;
-    text-align: center;
-   
-}
+@media screen and (min-width:1000px ) {
 
+    
+    .hero>picture,
+    .hero>#quote-container{
+        grid-row: 1/3;
+    }
+    .hero>#quote-container{
+        grid-column: 1/2;
+    }
+    .hero>picture{
+        grid-column: 2/3;
+    }
+    .hero>#quote-container,
+    .hero>picture>img{
+        min-width: 400px;
+        margin: auto;
+    }
+    .hero>#quote-container{
+        height: 300px;
+    }
+    #quote-container>h2{
+        font-size: 1.5rem;
+    }
+
+}
+@media screen and (min-width:1600px ) {
+    .hero>#quote-container,
+    .hero>picture>img{
+        min-width: 600px;
+        margin: auto;
+    }
+    #quote-container>h2{
+        font-size: 2rem;
+    }
+
+}

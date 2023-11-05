@@ -8,26 +8,77 @@
 
             <link rel="stylesheet" href="/src/style/main.css">
             <link rel="stylesheet" href="/src/style/components/headers.css">
+            <link rel="stylesheet" href="/src/style/components/navigation.css">
             <link rel="stylesheet" href="/src/style/components/hero.css">
             <link rel="stylesheet" href="/src/style/components/dashboard.css">
             <link rel="stylesheet" href="/src/style/components/footer.css">
-            <link rel="stylesheet" href="/src/style/views/index.css">
-
         </head>
         <body>
 
-            <!-- Headers -->
-            <header id="headers" class="navigation">  
+
+            <header class="navigation">
+            
+                <input type="checkbox" id="toggle-navigation">
+                <label aria-label="lorem ipsum" for="toggle-navigation">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </label>
+                <nav class="navigation-table">
+                    <div class="navigation-logo dot-rotation">
+                        <h2>Note Book</h2>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="navigation-list">
+                        <a href="/index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <h2>Home</h2>
+                        </a>
+                        <a href="/notes.html"class="active" >
+                            <i class="fa-solid fa-list"></i>
+                            <h2>Notes </h2>
+                        </a>
+    
+                    </div>
+
+                    <div class="switch-mode">
+                        <p>Light</p>
+                        <p>Dark</p>
+                        <input type="checkbox" id="toggle-mode">
+                        <label for="toggle-mode"></label>
+                    </div>
+                </nav>
 
             </header>
-            <main class="content index" >
+            <main class="content">
+                <section class="hero">
+                    <span>
+                        <h2>Personal-Note Book</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eligendi autemprehenderit distinctio nulla perspiciatis quisquam fugit doloribus iure vel. Totam quaerat repellat sunt nisi?</p>
+                    </span>
+                    <picture>
+                        <source media="(min-width: 2600px)" srcset="/public/city/city-1.png">
+                        <source media="(min-width: 2400px)" srcset="/public/city/city-5.png">
+                        <source media="(min-width: 2200px)" srcset="/public/city/city-4.png">
+                        <source media="(min-width: 2000px)" srcset="/public/city/city-3.png">
+                        <source media="(min-width: 1800px)" srcset="/public/city/city-2.png">
+                        
+                        <source media="(min-width: 1600px)" srcset="/public/city/city-1.png">
+                        <source media="(min-width: 1200px)" srcset="/public/city/city-5.png">
+                        <source media="(min-width: 1000px)" srcset="/public/city/city-4.png">
+                        <source media="(min-width: 800px)" srcset="/public/city/city-3.png">
+                        <source media="(min-width: 600px)" srcset="/public/city/city-2.png">
 
+                        <img src="/public/city/city-1.png" alt="" width="auto" >
+                      </picture>
                 </section>
-                <section class="hero" id="hero">
-           
-                </section>
-                <section class="dashboard" >
+                <section class="dashboard">
                     <span class="page-title">
+    
                         <h1>Dashboard</h1>
                     </span>
                     <div class="card">
@@ -141,7 +192,7 @@
                         <div >
                             <h2>Feed Back</h2>
                             <form action="">
-                                <label  for="feedBackDate">Date</label>
+                                <label for="feedBackDate">Date</label>
                                 <input type="date" id="feedBackDate">
                                 <label for="feedBackMassage">Massage</label>
                                 <textarea
@@ -163,13 +214,9 @@
                             </form>
                         </div>
             </footer>
-   
 
 
-            <script src="/src/components/togleMode.js"></script>
-        
-<script src="/src/views/index.js" type="module" ></script>
+<script src="/src/components/togleMode.js"></script>
 
 </body>
 </html>
-

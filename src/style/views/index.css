@@ -1,3 +1,31 @@
 
 
 
+main.index{
+    display: grid;
+    grid-template-rows: 1fr 600px;
+}
+
+section.hero{
+    grid-row: 2/3;
+}
+section.dashboard{
+    grid-row: 1/2;
+}
+
+@media screen and (min-width:1000px) {
+    main.index{
+        display: grid;
+        grid-template-rows:  400px  1fr;
+    }
+    
+    section.hero{
+        grid-row: 1/2;
+    }
+    section.dashboard{
+        grid-row: 2/3;
+
+       
+    }
+    
+}

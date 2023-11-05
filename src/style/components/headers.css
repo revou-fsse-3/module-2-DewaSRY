@@ -1,0 +1,264 @@
+
+
+
+
+/* style */
+
+.navigation-table{
+   background-color: var(--second);
+   border: solid 1px var(--four);
+}
+.navigation-list> a{
+    color: var(--five);
+}
+
+.navigation-list> a::after{
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+      60deg,
+      transparent,
+      var(--four)
+    );
+    z-index: -1;
+}
+.switch-mode{
+  background-color: var(--primary);
+  color: var(--five);
+  border: solid 1px var(--second);
+}
+.switch-mode>label{
+  background-image: linear-gradient(
+      60deg,
+      var(--five),
+      var(--primary)
+    );
+}
+.clock{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 50px;
+  /* position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clock div{
+  position: relative;
+  height: 100%;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 60px;
+  color: #202020;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  letter-spacing: 3px;
+}
+.clock span{
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+/* layout **********************************/
+#headers{
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+}
+.navigation>input,
+.navigation>label{
+    position: absolute;
+    top: 0.2rem;
+    left: 0.25rem;
+    z-index: 10;
+}
+.navigation-table{
+    position: absolute;
+    left:0 ;
+    top: 0;
+    z-index: 5;
+    padding-top: 5rem;
+}
+.navigation-logo{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  padding: 1rem 5rem;
+  z-index: 6;
+}
+.navigation-table{
+   width:  50px;
+   height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 4rem;
+    transform: translateX(-100%);
+}
+.navigation-list> a{
+  padding: 0 0.5rem;
+   width: 90%;
+    display: flex;
+    margin: auto;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    justify-content: space-between;
+    text-decoration: none;
+    position: relative;
+}
+
+.switch-mode{
+  width: 70%;
+  min-width: 50px;
+  height: 3rem;
+  border-radius: 30px;
+  position: relative;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch-mode>p,
+.navigation-list> a>h2{
+  display: none;
+}
+
+  .switch-mode>input{
+    opacity: 0;
+  }
+  .switch-mode>input,
+  .switch-mode>label{
+    position: absolute;
+    top: 0.2rem;
+    left: 0.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: linear-gradient(
+        60deg,
+        var(--five),
+        var(--primary)
+      );
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+.navigation>input,
+.navigation>label{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    cursor: pointer;
+}
+.navigation>input{
+    opacity: 0;
+}
+.navigation>label
+{
+    position: relative;
+    background-image: linear-gradient(
+        60deg,
+        var(--three),
+        var(--primary)
+      );
+
+      border-radius: 12px;
+}
+.line{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+  background-color: white;
+    height: 3px;
+    border-radius: 5px;
+}
+.line:first-of-type{
+    top: 25%;
+}
+.line:nth-of-type(2){
+    top: 45%;
+}
+.line:nth-of-type(3){
+    top: 70%;
+}
+.navigation-list> a,
+.switch-mode>input,
+.switch-mode>label,
+.navigation-table,
+.line,
+.navigation>label{
+  transition: all 0.5s ease-in;
+
+}
+
+/* function */
+.switch-mode>input:checked,
+.switch-mode>input:checked ~ label{
+  transform: rotate(460deg);
+
+}
+
+.navigation>input:checked ~ label>div:nth-of-type(odd){
+    top: 46%;
+}
+.navigation>input:checked ~ label>div:nth-of-type(1){
+    transform: rotate(45deg);
+}
+.navigation>input:checked ~ label>div:nth-of-type(3){
+    transform: rotate(-45deg);
+}
+.navigation>input:checked ~ label>div:nth-of-type(2){
+    opacity: 0;
+}
+
+.navigation>input:checked ~ .navigation-table{
+    transform: translateX(0);
+}
+/* responsive */
+
+@media screen and (min-width:600px) {
+  .navigation-table{
+    width: 200px;
+  }
+  .switch-mode>p,
+  .navigation-list> a>h2{
+    display: inline;
+  }
+  .switch-mode{
+    margin: auto;
+  }
+  .switch-mode>input:checked,
+  .switch-mode>input:checked ~ label{
+    transform:translateX(220%) rotate(460deg);
+  
+  }
+}
+@media screen and (min-width:1200px) {
+  .navigation-table{
+    width: 200px;
+    transform: translateX(0);
+  }
+  .switch-mode>p,
+  .navigation-list> a>h2{
+    display: inline;
+  }
+  .switch-mode{
+    margin: auto;
+  }
+  .switch-mode>input:checked,
+  .switch-mode>input:checked ~ label{
+    transform:translateX(220%) rotate(460deg);
+  
+  }
+}
