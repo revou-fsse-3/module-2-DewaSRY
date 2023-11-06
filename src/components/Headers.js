@@ -15,7 +15,7 @@ export default class Headers{
 
         </div>
         <nav class="navigation-table" id="navigation-table">
-            <div class="navigation-list" >
+            <div class="navigation-list"  >
                 <a href="/index.html">
                 <img src="/public/navigation-item/Control-Panel.png" alt="Control-Panel" width="24" title="Dashboard">
                     <h2>Dashboard</h2>
@@ -44,17 +44,25 @@ export default class Headers{
         `
         this.navItem= this.root.querySelector("#navigation-table")
         this.toggleNavigation = this.root.querySelector("#toggle-navigation")
+        this.navLogo= this.root.querySelector(".navigation-logo")
 
         this.toggleMode = this.root.querySelector("#toggle-mode")
         this.toggleMode.addEventListener('change', this.switchTheme);
         this.initCurrentTheme()
         
-
+        let backdrop= null
         this.toggleNavigation.addEventListener('change', () => {
             if (window.innerWidth > 1200) return;
-            if (!this.toggleNavigation.checked) return;
-            this.handleNavigation();
+            if (this.toggleNavigation.checked) {
+                backdrop= this.handleNavigation();
+            }
+            if (!this.toggleNavigation.checked&&document.contains(backdrop) ) {
+                backdrop.remove()
+            }
+            
         })
+
+        this.handleScroll();
 
    
     }
@@ -81,16 +89,29 @@ export default class Headers{
 
     handleNavigation=()=> {
         const div = document.createElement("div");
-        let width = document.innerHTML;
         const removeDiv=()=>div.remove();
         window.addEventListener ('resize', ()=>removeDiv());
         div.classList.add("backdrop")
         div.addEventListener("click", () => {
             this.toggleNavigation.checked = false;
-            
             div.remove();
         })
-        document.body.appendChild(div)
+        document.body.appendChild(div);
+        return div;
+
+    }
+    handleScroll() {
+        let currentScroll = window.scrollY;
+        window.addEventListener("scroll", () => {
+            if (currentScroll < window.scrollY) {
+                this.navLogo.classList.add("scrollUp")
+            } else {
+                this.navLogo.classList.remove("scrollUp")
+                
+            }
+            currentScroll = window.scrollY;
+
+        })
     }
     initiateClock() {
         var hour = this.root.querySelector("#hour");

@@ -31,7 +31,7 @@
 }
  #quote-container{
     margin: auto;
-    width:   90vw  ;
+    width:  90vw  ;
 
 
     min-height: 200px;
@@ -60,7 +60,7 @@
 #quote-container>button:first-of-type{
     position: absolute;
     bottom: 0.5rem;
-    left: 0.5rem;
+    right: 6rem;
 }
 #quote-container>button:last-of-type{
     position: absolute;
@@ -91,10 +91,12 @@
     }
     .hero>#quote-container{
         height: 300px;
+        max-width: 80vw;
     }
     #quote-container>h2{
         font-size: 1.5rem;
     }
+ 
 
 }
 @media screen and (min-width:1600px ) {
@@ -106,5 +108,6 @@
     #quote-container>h2{
         font-size: 2rem;
     }
+ 
 
 }

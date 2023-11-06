@@ -6,4 +6,6 @@ const headerElement = document.getElementById("headers")
 const heroElement = document.getElementById("hero")
 new Headers(headerElement)
 new Hero(heroElement)
-console.log(heroElement)
+
+
+console.log('he')

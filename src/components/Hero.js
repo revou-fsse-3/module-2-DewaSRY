@@ -1,4 +1,4 @@
-
+// import quotes from "/public/data/quote.json"
 
 export default class Hero{
     constructor(root) {
@@ -9,9 +9,9 @@ export default class Hero{
         </span>
         <div  id="quote-container">
         <h2>From small beginnings come great things.</h2>
-        <p>#General-Anonymous</p>
-            <button> Next Quotes </button> 
-            <button >Send to X  </button>  
+        <p> # General-Anonymous</p>
+            <button id="next-btn"> Next Quotes </button> 
+            <button id="send-btn" >Send to X  </button>  
         </div>
         <picture>
             <source media="(min-width: 2600px)" srcset="/public/city/city-1.png">
@@ -28,6 +28,14 @@ export default class Hero{
             <img src="/public/city/city-1.png" alt="" width="auto" >
         </picture>
         `
-        
+        this.noQuote = 0;
+        this.nextQuote = this.root.querySelector("#next-btn");
+        this.sendQuote = this.root.querySelector("#send-btn");
+
+    }
+
+    sendTox() {
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${currentQuote.text} - ${currentQuote.author}`;
+        window.open(twitterUrl, "_blank");
     }
 }

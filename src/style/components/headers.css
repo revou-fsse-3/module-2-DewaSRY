@@ -3,7 +3,14 @@
 
 
 /* style */
-
+.navigation-logo{
+  background-color: var(--four);
+  color: var(--five);
+}
+.scrollUp{
+  transform: translateY(-3rem);
+  opacity: 0;
+}
 .navigation-table{
    background-color: var(--second);
    border: solid 1px var(--four);
@@ -192,13 +199,14 @@
 .line:nth-of-type(3){
     top: 70%;
 }
+.navigation-logo,
 .navigation-list> a,
 .switch-mode>input,
 .switch-mode>label,
 .navigation-table,
 .line,
 .navigation>label{
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in-out;
 
 }
 
