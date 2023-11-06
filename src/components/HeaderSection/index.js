@@ -14,9 +14,9 @@ import HeaderLogo from "./HeaderLogo.js";
 export default class HeaderSection extends Container {
   constructor(root) {
     super(root);
-    this.set(ToggleNavigation);
-    this.set(HeaderLogo);
-    this.set(NavigationTable);
+    this.set(new ToggleNavigation());
+    this.set(new HeaderLogo());
+    this.set(new NavigationTable());
 
     this.navItem = this.getContent("navigation-table");
     this.toggleNavigation = this.getContent("toggle-navigation");

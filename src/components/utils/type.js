@@ -25,6 +25,11 @@ class Component {
   getContent(id) {
     return this.root.querySelector("#" + id);
   }
+  /**
+   *
+   * @param {string} selector
+   * @returns
+   */
   getContents(selector) {
     return this.root.querySelectorAll(selector);
   }
@@ -78,7 +83,7 @@ export class Container extends Component {
    * @returns {Container}
    */
   set(Children) {
-    let childrenRoo = new Children().getRoot();
+    let childrenRoo = Children.getRoot();
     this.root.appendChild(childrenRoo);
     return this;
   }

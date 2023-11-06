@@ -15,7 +15,7 @@ export default class NavigationTable extends Container {
     super(document.createElement("nav"));
     this.setAtt("id", "navigation-table");
     this.setAtt("class", "navigation-table");
-    this.set(NavigationList);
-    this.set(ThemeSwitcher);
+    this.set(new NavigationList());
+    this.set(new ThemeSwitcher());
   }
 }
