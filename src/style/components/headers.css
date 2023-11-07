@@ -107,7 +107,7 @@
   z-index: 6;
 }
 .navigation-table{
-   width:  50px;
+   width:  60px;
    height: 100vh;
     display: grid;
     grid-template-rows: 1fr 4rem;
@@ -118,7 +118,7 @@
    width: 90%;
     display: flex;
     margin: auto;
-    margin-top: 0.5rem;
+    margin-top:1rem;
     font-size: 0.7rem;
     justify-content: space-between;
     text-decoration: none;

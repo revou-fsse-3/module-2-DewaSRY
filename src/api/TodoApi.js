@@ -44,8 +44,7 @@ export default class TodoApi {
    */
 
   static saveTodo(todoSave) {
-    TodoApi.local.saveNode(todoSave);
-    return 1;
+    return TodoApi.local.saveNode(todoSave);
   }
   static deleteTodo(id) {
     return TodoApi.local.deleteNode(id);
@@ -75,3 +74,4 @@ class Reply {
     yield* this.getReply("I miss you even more ");
   }
 }
+// console.log(todo.date.substring(5, 7));

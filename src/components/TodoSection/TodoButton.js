@@ -22,21 +22,21 @@ export default class TodoButton extends Children {
         </div>
         <dialog id="todoForm">
             <div class="todo-header">
-                <h2>Add a new Note</h2>
+                <h2>Todo List Note</h2>
                 <span onclick="todoForm.close()">&#x274c;</span>
             </div>
             <form  method="dialog" id="todo-form">
-                <label>Description</label>
-                <textarea spellcheck="false" id="todo-desc"></textarea>
-                <label>Date</label>
-                <input type="datetime-local" spellcheck="false" id="todo-date"/>
-                <input type="text" hidden>
-                <button>Add new note</button>
+                <label>Describe Reminder</label>
+                <textarea placeholder="Write Description ..." required spellcheck="false" id="todo-desc"></textarea>
+                <label>Schedule  Date</label>
+                <input required type="datetime-local" spellcheck="false" id="todo-date"/>
+                <input type="text"id="todo-id" hidden>
+                <button>Save Todo Note</button>
             </form>
         </dialog>
         `;
     /**
-     * @type {HTMLElement}
+     * @type {HTMLDialogElement}
      */
     this.modal = this.getContent("todoForm");
     this.form = this.getContent("todo-form");
@@ -57,6 +57,11 @@ export default class TodoButton extends Children {
       }
 
       this.modal.close();
+    });
+    document.addEventListener("click", ({ target }) => {
+      if (target.contains(this.form) && this.modal && this.modal.open) {
+        this.modal.close();
+      }
     });
   }
 }

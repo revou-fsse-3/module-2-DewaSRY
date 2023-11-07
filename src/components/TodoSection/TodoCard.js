@@ -23,14 +23,13 @@ export default class TodoCard extends Children {
     const [first, ...rest] = todo.description.split(" ");
     this.firstWord = first;
     this.description = [...rest].join("");
-    console.log(this.description);
     if (!this.description) {
       this.firstWord = first.substring(0, 6);
       this.description = first.substring(6);
     }
     const date = new Date(todo.date);
-    const yearsMon = date.toLocaleTimeString();
-    const hours = date.toDateString();
+    const hours = date.toLocaleTimeString();
+    const yearsMon = date.toDateString();
     this.setContent = `
         <div class="todo-cards" id="${todo.id}">
             <p>
@@ -38,8 +37,8 @@ export default class TodoCard extends Children {
             ${this.description}
             </p>
             <div class="date">
-                <span class="date">${yearsMon}</span> -
-                <span class="hours">${hours}</span>
+            <span class="date">${yearsMon}</span> -
+            <span class="hours">${hours}</span>
             </div>
             <input type="checkbox" name="" id="oppen-settings${todo.id}" />
             <input type="text"   />
@@ -63,7 +62,6 @@ export default class TodoCard extends Children {
     dele.addEventListener("click", () => {
       onTodoDelete();
       this.checkboxInput.checked = false;
-      console.log("hallo");
     });
   }
 }

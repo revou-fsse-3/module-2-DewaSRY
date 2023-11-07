@@ -50,26 +50,31 @@
   }
   #todoForm > form>label{
     color: var(--five);
+    margin-bottom: 0.5rem;
 
   }
   #todoForm > form > button {
     position: absolute;
     width: 70%;
     border-radius: 12px;
-    bottom: 0.2rem;
+    bottom: 0.5rem;
     right: 0.5rem;
     padding: 0.5rem;
+    background-color: var(--four);
+    color: var(--five);
   }
   #todoForm > form > input,
   #todoForm > form > textarea {
     border-radius: 7px;
+    border: none;
+    padding: 1rem 0.5rem ;
+    font-family: pop;
+    font-style: italic;
   }
-  #todoForm > form > input {
-    padding: 0.5rem 0;
-  }
+ 
   #todoForm > form > textarea {
     resize: none;
-    padding: 0.5rem 0;
+    height: 150px;
   }
   .wrapper {
     display: flex;

@@ -36,6 +36,7 @@ export default class TodoSection extends Container {
     this.modal = this.getContent("todoForm");
     this.desInput = this.getContent("todo-desc");
     this.dateInput = this.getContent("todo-date");
+    this.idInput = this.getContent("todo-id");
   }
   TodoButtonHandler = () => {
     return {
@@ -59,7 +60,7 @@ export default class TodoSection extends Container {
        * }}
        */
       updateTodo: (todo) => {
-        document.getElementById(id).remove();
+        document.getElementById(todo.id).remove();
         this.set(new TodoCard(todo, this.cardsHandler(todo)));
       },
     };
@@ -78,12 +79,12 @@ export default class TodoSection extends Container {
       onTodoEdit: () => {
         this.desInput.value = description;
         this.dateInput.value = date;
+        this.idInput.value = id;
         this.modal.showModal();
       },
       onTodoDelete: () => {
         document.getElementById(id).remove();
         const delId = TodoApi.deleteTodo(id);
-        console.log(id == delId);
       },
     };
   }
