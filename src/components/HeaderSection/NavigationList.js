@@ -25,9 +25,9 @@ export default class NavigationList extends Children {
         <img src="/public/navigation-item/Guitar.png" alt="Guitar" width="24"title="Game">
             <h2>Game </h2>
         </a>
-        <a href="/notes.html"class="active" >
+        <a href="/todo.html"class="active" >
         <img src="/public/navigation-item/Content.png" alt="todo" width="24" title="List">
-            <h2>List</h2>
+            <h2>Todo</h2>
         </a>
     </div>
         `;

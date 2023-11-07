@@ -1,69 +1,105 @@
-const daysTag = document.querySelector(".days"),
-  currentDate = document.querySelector(".current-date"),
-  prevNextIcon = document.querySelectorAll(".icons span");
-// getting new date, current year and month
-let date = new Date(),
-  currYear = date.getFullYear(),
-  currMonth = date.getMonth();
+const addBox = document.querySelector(".add-box"),
+popupBox = document.querySelector(".popup-box"),
+popupTitle = popupBox.querySelector("header p"),
+closeIcon = popupBox.querySelector("header i"),
+titleTag = popupBox.querySelector("input"),
+descTag = popupBox.querySelector("textarea"),
+addBtn = popupBox.querySelector("button");
 
-// storing full name of all months in array
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+const months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+const notes = JSON.parse(localStorage.getItem("notes") || "[]");
+let isUpdate = false, updateId;
 
-const renderCalendar = () => {
-  let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
-    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
-    lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
-    lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+addBox.addEventListener("click", () => {
+    popupTitle.innerText = "Add a new Note";
+    addBtn.innerText = "Add Note";
+    popupBox.classList.add("show");
+    document.querySelector("body").style.overflow = "hidden";
+    if(window.innerWidth > 660) titleTag.focus();
+});
 
-  let liTag = "";
+closeIcon.addEventListener("click", () => {
+    isUpdate = false;
+    titleTag.value = descTag.value = "";
+    popupBox.classList.remove("show");
+    document.querySelector("body").style.overflow = "auto";
+});
 
-  for (let i = firstDayofMonth; i > 0; i--) {
-    // creating li of previous month last days
-    liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
-  }
+function showNotes() {
+    if(!notes) return;
+    document.querySelectorAll(".note").forEach(li => li.remove());
+    notes.forEach((note, id) => {
+        let filterDesc = note.description.replaceAll("\n", '<br/>');
+        let liTag = `<li class="note">
+                        <div class="details">
+                            <p>${note.title}</p>
+                            <span>${filterDesc}</span>
+                        </div>
+                        <div class="bottom-content">
+                            <span>${note.date}</span>
+                            <div class="settings">
+                                <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+                                <ul class="menu">
+                                    <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Edit</li>
+                                    <li onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Delete</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>`;
+        addBox.insertAdjacentHTML("afterend", liTag);
+    });
+}
+showNotes();
 
-  for (let i = 1; i <= lastDateofMonth; i++) {
-    let isToday =
-      i === date.getDate() &&
-      currMonth === new Date().getMonth() &&
-      currYear === new Date().getFullYear()
-        ? "active"
-        : "";
-    liTag += `<li class="${isToday}">${i}</li>`;
-  }
+function showMenu(elem) {
+    elem.parentElement.classList.add("show");
+    document.addEventListener("click", e => {
+        if(e.target.tagName != "I" || e.target != elem) {
+            elem.parentElement.classList.remove("show");
+        }
+    });
+}
 
-  for (let i = lastDayofMonth; i < 6; i++) {
-    liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
-  }
-  currentDate.innerText = `${months[currMonth]} ${currYear}`;
-  daysTag.innerHTML = liTag;
-};
-renderCalendar();
+function deleteNote(noteId) {
+    let confirmDel = confirm("Are you sure you want to delete this note?");
+    if(!confirmDel) return;
+    notes.splice(noteId, 1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
+}
 
-prevNextIcon.forEach((icon) => {
-  // getting prev and next icons
-  icon.addEventListener("click", () => {
-    currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
-    if (currMonth < 0 || currMonth > 11) {
-      date = new Date(currYear, currMonth, new Date().getDate());
-      currYear = date.getFullYear();
-      currMonth = date.getMonth();
-    } else {
-      date = new Date();
+function updateNote(noteId, title, filterDesc) {
+    let description = filterDesc.replaceAll('<br/>', '\r\n');
+    updateId = noteId;
+    isUpdate = true;
+    addBox.click();
+    titleTag.value = title;
+    descTag.value = description;
+    popupTitle.innerText = "Update a Note";
+    addBtn.innerText = "Update Note";
+}
+
+addBtn.addEventListener("click", e => {
+    e.preventDefault();
+    let title = titleTag.value.trim(),
+    description = descTag.value.trim();
+
+    if(title || description) {
+        let currentDate = new Date(),
+        month = months[currentDate.getMonth()],
+        day = currentDate.getDate(),
+        year = currentDate.getFullYear();
+
+        let noteInfo = {title, description, date: `${month} ${day}, ${year}`}
+        if(!isUpdate) {
+            notes.push(noteInfo);
+        } else {
+            isUpdate = false;
+            notes[updateId] = noteInfo;
+        }
+        localStorage.setItem("notes", JSON.stringify(notes));
+        showNotes();
+        closeIcon.click();
     }
-    renderCalendar();
-  });
 });

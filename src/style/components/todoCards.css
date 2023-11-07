@@ -1,0 +1,78 @@
+.todo-cards{
+    background-color: var(--four);
+    width: 350px;
+    min-height: 300px;
+    padding: 2rem 0.5rem;
+    border-radius: 12px;
+    color: var(--five);
+    position: relative;
+    
+}
+.todo-cards >p,
+.todo-cards .first{
+    inline-size: 150px;
+    overflow-wrap: break-word;
+
+}
+.todo-cards .first{
+    font-size: 2rem;
+}
+
+.todo-cards >.date{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+}
+.todo-cards>p{
+    inline-size: 120px;
+    width: 330px;
+}
+
+
+
+.todo-cards >input,
+.todo-cards >label
+{
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.5rem;
+
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.todo-cards >input{
+    width: 7rem;
+    height: 7rem;
+    opacity: 0;
+}
+.todo-cards >.settings{
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    width: 5rem;
+    height: 3rem;
+    /* padding: 0.5rem 1rem; */
+    background-color: var(--second);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+    transform: scaleY(0);
+    cursor: pointer;
+}
+.todo-cards button{
+    background-color: transparent;
+    border: none;
+    color: var(--five);
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.todo-cards button:hover{
+    border: solid 2px white;
+    filter: brightness(1.5);
+}
+.todo-cards >input:checked ~ .settings{
+    transform: scaleY(1);
+
+}
+

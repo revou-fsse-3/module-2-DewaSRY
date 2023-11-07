@@ -13,7 +13,7 @@
 }
 .navigation-table{
    background-color: var(--second);
-   border: solid 1px var(--four);
+   border-right: solid 4px var(--four);
 }
 .navigation-list> a{
     color: var(--five);
@@ -41,8 +41,8 @@
 .switch-mode>label{
   background-image: linear-gradient(
       60deg,
-      var(--five),
-      var(--primary)
+      var(--four),
+      var(--five)
     );
 }
 .clock{
