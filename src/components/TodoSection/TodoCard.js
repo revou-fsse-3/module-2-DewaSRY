@@ -52,8 +52,7 @@ export default class TodoCard extends Children {
           `;
     this.checkboxInput = this.getContents("input[type='checkbox']")[0];
     const [edit, dele] = this.getContents("button");
-    // this.editBtn = edit;
-    // this.delBtn = del;
+
     /**
      * @type {{HTMLElement}}
      */
