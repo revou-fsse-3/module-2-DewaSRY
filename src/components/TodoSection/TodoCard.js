@@ -31,7 +31,7 @@ export default class TodoCard extends Children {
     const hours = date.toLocaleTimeString();
     const yearsMon = date.toDateString();
     this.setContent = `
-        <div class="todo-cards" id="${todo.id}">
+        <div class="todo-cards" id="${todo.id.toString()}"  draggable="true">
             <p>
             <span class="first">${this.firstWord}</span>
             ${this.description}
@@ -41,7 +41,6 @@ export default class TodoCard extends Children {
             <span class="hours">${hours}</span>
             </div>
             <input type="checkbox" name="" id="oppen-settings${todo.id}" />
-            <input type="text"   />
             <label for="oppen-settings${todo.id}">&#x2026;</label>
             <div class="settings">
                 <button>&#128394; Edit</button>

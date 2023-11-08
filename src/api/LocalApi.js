@@ -20,8 +20,9 @@ export default class LocalApi {
   }
 
   saveNode(NodeToSave) {
-    const Nodes = this.getAllNodes();
-    const existing = Nodes.find((Node) => Node.id == NodeToSave.id);
+    console.log(NodeToSave);
+    // if (this.collection.length <= 0) return -1;
+    const existing = this.collection.find((Node) => Node.id == NodeToSave.id);
     // Edit/Update
     if (existing) {
       existing.title = NodeToSave.title;
@@ -30,16 +31,16 @@ export default class LocalApi {
     } else {
       NodeToSave.id = Math.floor(Math.random() * 1000000 * 7);
       NodeToSave.updated = new Date().toISOString();
-      Nodes.push(NodeToSave);
+      this.collection.push(NodeToSave);
     }
-    localStorage.setItem(this.key, JSON.stringify(Nodes));
+    localStorage.setItem(this.key, JSON.stringify(this.collection));
     return NodeToSave.id;
   }
 
   deleteNode(id) {
-    const Nodes = this.getAllNodes();
-    const newNodes = Nodes.filter((Node) => Node.id != id);
-    localStorage.setItem(this.key, JSON.stringify(newNodes));
+    if (this.collection.length <= 0) return -1;
+    this.collection = this.collection.filter((Node) => Node.id != id);
+    localStorage.setItem(this.key, JSON.stringify(this.collection));
     return id;
   }
 }

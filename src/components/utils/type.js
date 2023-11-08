@@ -23,6 +23,9 @@ class Component {
    * @returns {HTMLElement}
    */
   getContent(id) {
+    if (typeof id === "number") {
+      id.toString();
+    }
     return this.root.querySelector("#" + id);
   }
   /**

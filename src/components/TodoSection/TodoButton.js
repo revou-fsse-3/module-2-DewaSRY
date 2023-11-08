@@ -17,7 +17,7 @@ export default class TodoButton extends Children {
   constructor({ createTodo, updateTodo }) {
     super();
     this.setContent = `
-        <div class="wrapper" id="12">
+        <div class="wrapper" >
             <span  onclick="todoForm.showModal()">&#65122;</span>
         </div>
         <dialog id="todoForm">

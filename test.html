@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/src/style/main.css" />
-    <link rel="stylesheet" href="/src/style/components/headers.css" />
-    <link rel="stylesheet" href="/src/style/components/hero.css" />
-    <link rel="stylesheet" href="/src/style/components/dashboard.css" />
-    <link rel="stylesheet" href="/src/style/components/footer.css" />
-    <link rel="stylesheet" href="/src/style/views/index.css" />
   </head>
   <body>
-    <!-- Headers -->
-    <header id="headers" class="navigation"></header>
-    <main>
-      <section class="hero" id="hero"></section>
-      <section id="play"></section>
-    </main>
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(30deg, blue, white);
+      }
+      #text-input {
+        width: 500px;
+        height: 500px;
+        background-color: white;
+      }
+    </style>
 
-    <script src="/src/views/index.js" type="module"></script>
+    <div id="text-input" contenteditable="true"></div>
   </body>
 </html>
