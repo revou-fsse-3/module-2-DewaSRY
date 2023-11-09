@@ -9,12 +9,12 @@ import { Container, Children } from "/src/components/utils/type.js";
  * }}
  */
 export default class NotesViews extends Children {
-  constructor(note, {} = {}) {
+  constructor({} = {}) {
     super();
     this.setContent = `
       <label for="notes-title">Notes Title</label>
       <input type="text" id="notes-title" placeholder="Note Title " />
-      <div id="text-input" contenteditable="true"></div>
+      <div id="notes-input" contenteditable="true">New Notes</div>
         `;
   }
 }

@@ -1,5 +1,7 @@
 import { Container, Children } from "/src/components/utils/type.js";
 import NotesCard from "./NotesCard.js";
+import NotesAPi from "/src/api/NotesAPi.js";
+
 /**
  * @type {{
  *  root : HTMLElement,
@@ -10,9 +12,17 @@ import NotesCard from "./NotesCard.js";
  * }}
  */
 export default class NotesList extends Container {
-  constructor() {
+  /**
+   * @param {
+   * } cardsController
+   */
+
+  constructor(cardsController) {
     super(document.createElement("nav"));
     this.setAtt("class", "notes-list");
-    this.set(new NotesCard());
+    this.setAtt("id", "notes-list");
+    for (let cards of NotesAPi.getAllNote()) {
+      this.set(new NotesCard(cards, cardsController(cards)));
+    }
   }
 }

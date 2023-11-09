@@ -40,7 +40,6 @@
   }
   
   [data-theme="dark"] {
-    --primary: ;
     --primary: #2B2B2B;
     --second: #423F3E;
     --three: #171010;
@@ -49,7 +48,6 @@
     --background: linear-gradient(30deg,#2B2B2B,#171010);
 
     --backdrop: linear-gradient(30deg,rgba(43, 43, 43,0.9),black);
-
   }
 *{
     margin: 0;

@@ -1,48 +1,68 @@
 import LocalApi from "./LocalApi.js";
 /**
  * @type {{
- * getAllTodo:()=>void,
- * saveTodo:(NodeToSave:Object)=>void,
- * deleteTodo :(id:string)=>void
+ * getAllNote:()=>Object,
+ * saveNote:(NodeToSave:Object)=>number,
+ * deleteNote :(id:string)=>number
  * }}
  */
 export default class NotesAPi {
   static local = new LocalApi("note-api");
-  static getAllNotes() {
-    return TodoApi.local.getAllNodes();
+  // static getAllNotes() {
+  //   return NoteApi.local.getAllNodes();
+  // }
+  static getAllNote() {
+    const Note = NotesAPi.local.getAllNodes();
+    let fIdx = -1;
+    let lIdx = Note.length - 1;
+    return {
+      [Symbol.iterator]() {
+        return this;
+      },
+      next() {
+        if (fIdx < lIdx) {
+          return {
+            value: Note[++fIdx],
+            done: false,
+          };
+        }
+        return {
+          value: Note[lIdx],
+          done: true,
+        };
+      },
+    };
   }
-  //   static getAllTodo() {
-  //     const todo = TodoApi.local.getAllNodes();
-  //     let fIdx = -1;
-  //     let lIdx = todo.length - 1;
-  //     return {
-  //       [Symbol.iterator]() {
-  //         return this;
-  //       },
-  //       next() {
-  //         if (fIdx < lIdx) {
-  //           return {
-  //             value: todo[++fIdx],
-  //             done: false,
-  //           };
-  //         }
-  //         return {
-  //           value: todo[lIdx],
-  //           done: true,
-  //         };
-  //       },
-  //     };
-  //   }
   /**
    * @param {{
+   *    title:string
    *    body:string,
-   * }} todoSave
+   * }|{
+   * title:string
+   *  body:string,
+   * id:string,
+   * update:Date
+   * }
+   * } NoteSave
    */
 
   static saveNote(note) {
-    return TodoApi.local.saveNode(note);
+    return NotesAPi.local.saveNode(note);
   }
+  static createNotes() {
+    const notesId = NotesAPi.local.saveNode({
+      title: "Notes Title",
+      body: "Write your notes there",
+    });
+    return NotesAPi.local.getNode(notesId);
+  }
+
   static deleteNote(id) {
-    return TodoApi.local.deleteNode(id);
+    return NotesAPi.local.deleteNode(id);
+  }
+  static getNote(id) {
+    console.log(NotesAPi.collection);
+    const notes = NotesAPi.local.getNode(id);
+    return notes;
   }
 }

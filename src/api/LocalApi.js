@@ -18,9 +18,10 @@ export default class LocalApi {
       return new Date(a.updated) > new Date(b.updated) ? -1 : 1;
     });
   }
-
+  getNode(id) {
+    return this.collection.find((i) => i.id === id);
+  }
   saveNode(NodeToSave) {
-    console.log(NodeToSave);
     // if (this.collection.length <= 0) return -1;
     const existing = this.collection.find((Node) => Node.id == NodeToSave.id);
     // Edit/Update

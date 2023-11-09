@@ -144,27 +144,5 @@
     <!-- <script src="/src/components/togleMode.js"></script> -->
 
     <script src="/src/views/notes.js" type="module"></script>
-    <script type="module">
-      import TodoApi from "/src/api/NotesAPi.js";
-
-      // console.log(TodoApi);
-      const notes = document.getElementById("text-input");
-      notes.innerHTML = `
-      hewgwegehwe
-      <img
-              src="/public/tekno-img/tekno-6.png"
-              id="image-tecno-6"
-              alt=""
-              width="350"
-              height="350"
-              
-            />
-      `;
-      notes.addEventListener("blur", () => {
-        notes.childNodes.forEach((no) => {
-          console.log(no);
-        });
-      });
-    </script>
   </body>
 </html>

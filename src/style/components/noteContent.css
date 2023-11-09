@@ -2,8 +2,7 @@
     display: grid;
     grid-template-rows: ;
 } */
-
-#text-input {
+#notes-input {
   height: 1000px;
   width: 100%;
   max-width: 1200px;
@@ -12,7 +11,7 @@
   display: inline-block;
   overflow: hidden;
 }
-#text-input > img {
+#notes-input > img {
   display: block;
   margin: auto;
   border-radius: 12px;

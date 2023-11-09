@@ -31,7 +31,7 @@ class Component {
   /**
    *
    * @param {string} selector
-   * @returns
+   * @returns {HTMLElement[]}
    */
   getContents(selector) {
     return this.root.querySelectorAll(selector);
@@ -74,7 +74,6 @@ export class Children extends Component {
  */
 export class Container extends Component {
   /**
-   *
    * @param {HTMLElement} root
    */
   constructor(root) {
