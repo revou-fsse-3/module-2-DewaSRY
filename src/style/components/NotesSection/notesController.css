@@ -1,0 +1,15 @@
+.notes-control {
+    height: 75px;
+    max-width: 1200px;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    margin: 1rem 0;
+  }
+  .notes-control > button {
+    height: 40px;
+    border: none;
+    margin: 0 0.5rem;
+    border-radius: 12px;
+  }

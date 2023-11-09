@@ -18,7 +18,7 @@ export default class NotesList extends Container {
    */
 
   constructor(cardsController) {
-    super(document.createElement("nav"));
+    super(document.createElement("div"));
     this.setAtt("class", "notes-list");
     this.setAtt("id", "notes-list");
     for (let cards of NotesAPi.getAllNote()) {

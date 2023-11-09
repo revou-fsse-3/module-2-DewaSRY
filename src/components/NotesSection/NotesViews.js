@@ -12,8 +12,8 @@ export default class NotesViews extends Children {
   constructor({} = {}) {
     super();
     this.setContent = `
-      <label for="notes-title">Notes Title</label>
       <input type="text" id="notes-title" placeholder="Note Title " />
+      <label for="notes-title">Notes Title</label>
       <div id="notes-input" contenteditable="true">New Notes</div>
         `;
   }

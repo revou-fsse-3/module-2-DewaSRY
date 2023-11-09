@@ -1,0 +1,16 @@
+.notes-list{
+    padding: 1rem 0;
+    height: 200px;
+    overflow-x: scroll;
+    display: flex;
+    margin-bottom: 0.5rem;
+    max-width: 1200px;
+  }
+.notes-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+.notes-list::-webkit-scrollbar-thumb {
+    background: var(--four); 
+    border-radius: 10px;
+  }

@@ -1,0 +1,71 @@
+.image-input {
+    position: relative;
+    background-color: rgb(146, 139, 139);
+    margin: 5px;
+  }
+  .image-input > input,
+  .image-input > label,
+  .image-input {
+    width: 40px;
+    margin: 2px;
+    height: 40px;
+  }
+  .image-input > input,
+  .image-input > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .image-input > input {
+    opacity: 0;
+  }
+  .image-input > input:checked ~ label > img {
+    border-radius: 15px;
+  }
+  .image-option {
+    width: 170px;
+    height: 200px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 50px));
+    grid-template-rows: repeat(auto-fit, minmax(0, 50px));
+    place-items: center;
+    background-color: var(--second);
+    border-radius: 30px;
+    padding: 10px;
+    z-index: 12;
+    transform: scale(0);
+  }
+  .image-option > button {
+    padding: 5px 2rem;
+    border-radius: 12px;
+    border: none;
+    grid-column: 1/3;
+  }
+  .image-control {
+    width: 3rem;
+    height: 2rem;
+    position: relative;
+    background: red;
+  }
+  .image-control > input,
+  .image-control > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+  }
+  .image-control > input {
+    transform: translate(-10%, -10%);
+    opacity: 0;
+  }
+  .image-control > label {
+    transform: translate(-17%, -55%);
+  }
+  .image-control > input:checked ~ .image-option {
+    transform: scaleY(1);
+    z-index: 6;
+  }

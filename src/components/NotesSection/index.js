@@ -1,18 +1,6 @@
 import { Container, Children } from "/src/components/utils/type.js";
 
 import NotesAPi from "/src/api/NotesAPi.js";
-// NotesAPi.saveNote({
-//   title: "first",
-//   body: "first notes",
-// });
-// NotesAPi.saveNote({
-//   title: "second",
-//   body: "second notes",
-// });
-// NotesAPi.saveNote({
-//   title: "three",
-//   body: "three notes",
-// });
 
 import NotesControl from "./NotesControl.js";
 import NotesList from "./NotesList.js";
@@ -38,7 +26,7 @@ export default class NotesSection extends Container {
         `;
     this.set(new NotesList(this.NotesCardHandler));
     this.set(new NotesControl(this.NotesControllerHandler()));
-    this.set(new NotesViews(this.NotesViewsHandler()));
+    this.set(new NotesViews());
     this.textArea = this.getContent("notes-input");
     this.title = this.getContent("notes-title");
     this.notesList = this.getContent("notes-list");
@@ -104,56 +92,4 @@ export default class NotesSection extends Container {
       },
     };
   };
-  NotesViewsHandler = () => {
-    return {};
-  };
-  // handlers() {
-  //   return {
-  //     onNoteSelect: (noteId) => {
-  //       const selectedNote = this.notes.find((note) => note.id == noteId);
-  //       this.setActiveNote(selectedNote);
-  //     },
-  //     onNoteAdd: () => {
-  //       const newNote = {
-  //         title: "New Note",
-  //         body: "Take note...",
-  //       };
-
-  //       NotesAPI.saveNote(newNote);
-  //       this.refreshNotes();
-  //     },
-  //     onNoteEdit: (title, body) => {
-  //       NotesAPI.saveNote({
-  //         id: this.activeNote.id,
-  //         title,
-  //         body,
-  //       });
-
-  //       this.refreshNotes();
-  //     },
-  //     onNoteDelete: (noteId) => {
-  //       NotesAPI.deleteNote(noteId);
-  //       this.refreshNotes();
-  //     },
-  //   };
-  // }
 }
-
-// // console.log(TodoApi);
-// const notes = document.getElementById("text-input");
-// notes.innerHTML = `
-// hewgwegehwe
-// <img
-//         src="/public/tekno-img/tekno-6.png"
-//         id="image-tecno-6"
-//         alt=""
-//         width="350"
-//         height="350"
-
-//       />
-// `;
-// notes.addEventListener("blur", () => {
-//   notes.childNodes.forEach((no) => {
-//     console.log(no);
-//   });
-// });

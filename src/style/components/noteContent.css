@@ -2,155 +2,46 @@
     display: grid;
     grid-template-rows: ;
 } */
-#notes-input {
-  height: 1000px;
-  width: 100%;
-  max-width: 1200px;
-  background-color: white;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  overflow: hidden;
-}
-#notes-input > img {
-  display: block;
-  margin: auto;
-  border-radius: 12px;
-}
-.notes-control,
-.notes-list {
+
+/* .notes-list {
   max-width: 1200px;
   display: flex;
   overflow-x: scroll;
-}
-.notes-control::-webkit-scrollbar ,
-.notes-list::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-.notes-control::-webkit-scrollbar ,
-.notes-list::-webkit-scrollbar-thumb {
-    background: black;
-    border-radius: 10px;
-  }
+} */
+
 .notes-control::-webkit-scrollbar ,
 .notes-list::-webkit-scrollbar-track {
     background: transparent;
 }
-.notes-cards{
-  flex-shrink: 0;
+/* .notes-cards{
+ 
   width: 180px;
   height: 180px;
   background-color: var(--four);
   margin: 0 0.5rem;
   border-radius: 12px;
   color: var(--primary);
-}
-.notes-control{
-  padding:  0.5rem;
+} */
 
-}
-.notes-control>button{
+/* .notes-control>button{
     font-size: 3rem;
     background-color: var(--four);
     color: var(--primary);
     border-radius: 14px;
     border: none;
-}
-.add-new-notes>span{
+} */
+/* .add-new-notes>span{
     border: dotted 3px var(--primary);
     border-radius: 50px;
     cursor: pointer;
-}
-
-
-
-
-.notes-cards {
- position: relative;
- padding: 0.5rem;
- font-style: italic;
-
-}
-.notes-cards> h2{
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.notes-cards> h3,
-.notes-cards> input,
-.notes-cards> label,
-.notes-cards> .settings{
-    position: absolute;
-    
-}
-.notes-cards> h3{
-    bottom: 0.5rem;
-    font-size: 0.8rem;
-}
-.notes-cards> input,
-.notes-cards> label{
-    bottom: 0.3rem;
-    right: 0.5rem;
-    font-size: 2rem;
-
-}
-.notes-cards> input{
-    width: 4rem;
-    height: 4rem;
-    opacity: 0;
-}
-.notes-cards> .settings{
-    bottom: 2rem;
-    background-color: var(--primary);
-    border-radius: 12px;
-    width: 4rem;
-    height: 3rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    transform: scaleY(0);
-}
-.notes-cards> .settings>button{
-    border: none;
-    background-color: var(--primary);
-    color: var(--four);
-    border-radius: 7px;
-}
-.notes-cards> input:checked~ .settings{
-    transform: scaleY(1);
-}
-/* <div class="notes-cards">
-<h2>Halloo</h2>
-<p>Test...</p>
-
-<h3>
-  <span> Update : </span>
-  <span> 12/12/1/21 </span>
-</h3>
-
-<input type="checkbox" name="" id="oppen-settings${todo.id}" />
-<label for="oppen-settings${todo.id}">&#x2026;</label>
-<div class="settings">
-  <button>&#128394; Edit</button>
-  <button>&#128465; Delete</button>
-</div>
-</div> */
+} */
 
 
 
 
 
-#notes-app > input,
-#notes-app > label {
-  display: inline-block;
-  width: 100%;
-  max-width: 1200px;
-}
-#notes-app > input {
-  height: 50px;
-}
-#notes-app > label {
-  text-align: right;
-  font-size: 45px;
-}
+
+
+
+
+

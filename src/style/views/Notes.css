@@ -1,0 +1,50 @@
+
+
+
+
+
+@import url(../components/NotesSection/imgControler.css);
+@import url(../components/NotesSection/noteCards.css);
+@import url(../components/NotesSection/notesController.css);
+@import url(../components/NotesSection/notesViews.css);
+@import url(../components/NotesSection/notesList.css);
+
+
+
+@media screen and (min-width: 1600px) {
+    #notes-app{
+        max-width: 1600px;
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-rows: 100px 100px 1fr;
+        place-content: center;
+    }
+    #notes-app>.notes-list{
+        grid-column: 2/3;
+        grid-row: 1/4;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+    #notes-app>.notes-list>div{
+        margin-top: 1rem;
+    }
+    #notes-app>.notes-control{
+        grid-row: 1/2;
+    }
+    #notes-app>:not(.notes-list){
+        grid-column: 1/2;
+    }
+    #notes-app>input,
+    #notes-app>label
+    {
+        grid-row: 2/3;
+
+    }
+    #notes-app>#notes-input{
+        grid-row: 3/4;
+
+    }
+  
+    
+} 

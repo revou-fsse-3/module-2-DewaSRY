@@ -1,0 +1,83 @@
+
+
+
+
+footer>#background-animate{
+    width: 100vw;
+    padding-top: 120px ;
+    padding-bottom: 270px;
+    position: relative;
+    overflow-x: hidden;
+  }
+  footer #background-animate  .city-bg{
+    position: absolute;
+    bottom: 0;
+    background: url("/public/footer/footer_bg.png") no-repeat scroll center 0;
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+  img#cycle-bg{
+    overflow: hidden;
+    /* background: url("/public/footer/cyclist.gif") no-repeat center center; */
+    width: 88px;
+    height: 100px;
+  background-size:100%;
+    bottom: 0;
+    left: 38%;
+    position: absolute;
+    /* -webkit-animation: my-first 30s linear infinite; */
+    animation: my-first 30s linear infinite;
+  }
+  img#car-bg{
+    /* background: url("/public/footer/volks.gif") no-repeat center center; */
+  
+    width: 330px;
+    height: 150px;
+  background-size:100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    overflow: hidden;
+    /* -webkit-animation: my-first 22s linear infinite; */
+    animation: my-first 22s linear infinite;
+  }
+  img#giphy {
+    width: 50px;
+    height: 100px;
+  background-size:100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    overflow: hidden;
+    /* -webkit-animation: my-first 5s linear infinite; */
+    animation: my-first 5s linear infinite;
+  }
+  
+  
+  @-moz-keyframes my-first {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+  }
+  
+  @-webkit-keyframes my-first {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+  }
+  
+  @keyframes my-first {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+  }

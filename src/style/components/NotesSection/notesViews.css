@@ -1,0 +1,39 @@
+#notes-input {
+    height: 1500px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--second);
+    padding: 1rem 1rem;
+    display: inline-block;
+    overflow: hidden;
+    color: var(--five);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    border-radius: 12px;
+  }
+  #notes-input > img {
+    display: block;
+    margin: auto;
+    border-radius: 12px;
+  }
+
+  #notes-title {
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border: none;
+    width: 70vw;
+    max-width: 800px;
+    border-radius: 12px;
+  background-color: var(--second);
+padding: 0 0.5rem;
+  color: var(--five);
+  }
+  #notes-title~ label{
+    position: absolute;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+  color:  var(--five);
+  margin-left: 2rem;
+  }
