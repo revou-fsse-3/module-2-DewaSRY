@@ -10,17 +10,48 @@
     <h3>hallo</h3>
     <!-- </select> -->
 
-    <script type="text/javascript">
+    <section class="hero" id="hero">
+      <span class="page-title">
+        <h1>Notes Book</h1>
+      </span>
+
+      <div id="quote-container">
+        <h2>From small beginnings come great things.</h2>
+        <p># General-Anonymous</p>
+        <button id="next-btn">Next Quotes</button>
+        <button id="send-btn">Send to X</button>
+      </div>
+      <picture>
+        <source media="(min-width: 2600px)" srcset="/public/city/city-1.png" />
+        <source media="(min-width: 2400px)" srcset="/public/city/city-5.png" />
+        <source media="(min-width: 2200px)" srcset="/public/city/city-4.png" />
+        <source media="(min-width: 2000px)" srcset="/public/city/city-3.png" />
+        <source media="(min-width: 1800px)" srcset="/public/city/city-2.png" />
+
+        <source media="(min-width: 1600px)" srcset="/public/city/city-1.png" />
+        <source media="(min-width: 1200px)" srcset="/public/city/city-5.png" />
+        <source media="(min-width: 1000px)" srcset="/public/city/city-4.png" />
+        <source media="(min-width: 800px)" srcset="/public/city/city-3.png" />
+        <source media="(min-width: 600px)" srcset="/public/city/city-2.png" />
+        <img src="/public/city/city-1.png" alt="" width="auto" />
+      </picture>
+    </section>
+
+    <!-- <script type="text/javascript">
       class QuotesParser {
         constructor() {
           this.quotes = new Array();
           this.fetcher = new XMLHttpRequest();
-          this.lastIndex = +localStorage.getItem("quotes-index") || 0;
+          this.lastIndex =
+            +localStorage.getItem("quotes-index") === undefined
+              ? 0
+              : localStorage.getItem("quotes-index") > 8621 || 0;
           this.data = [];
           this.fetcher.addEventListener("load", () => {
             const parserQuotes = JSON.parse(this.fetcher.responseText);
-            this.data = parserQuotes.slice(this.lastIndex);
-            console.log(this.data.length);
+            this.data = Array.from(parserQuotes.slice(this.lastIndex));
+
+            console.log("loade", this.lastIndex);
           });
           this.fetcher.open("GET", "/public/data/quote.json");
           this.fetcher.send();
@@ -36,18 +67,11 @@
             },
             next() {
               if (start === end) {
-                console.log(lastIndex);
                 localStorage.setItem("quotes-index", (lastIndex += 10));
-                console.log(start);
-                console.log(end);
                 start = 0;
               }
               return {
-                value: {
-                  idx: start,
-                  lidx: end,
-                  data: data[start++],
-                },
+                value: data[start++],
                 done: false,
               };
             },
@@ -55,7 +79,6 @@
         }
       }
 
-      // const getQUotes = QuoteApi.getQuotes();
       class QuoteApi {
         static qParser = new QuotesParser();
         static *generateQuotes() {
@@ -66,32 +89,16 @@
         static initGQuotes = QuoteApi.generateQuotes();
         static getQuote() {
           const data = QuoteApi.initGQuotes.next();
+          console.log(data);
           if (!data.value && data.done) return null;
-          if (!data.value) return testGetQuotes();
+          if (!data.value) return QuoteApi.getQuote();
           else if (data.done) return null;
           return data.value;
-        }
-        static test() {
-          console.log("test");
         }
       }
       const newTest = QuoteApi.getQuote;
       const test = new QuotesParser();
-      // console.log(test.getQUotes());
-      function* generateQuotes() {
-        for (let n of test.iterateQuotes()) {
-          yield n;
-        }
-      }
-      const getQUotes = generateQuotes();
-      function testGetQuotes() {
-        const data = getQUotes.next();
-        if (!data.value && data.done) return null;
-        if (!data.value) return testGetQuotes();
-        else if (data.done) return null;
-        return data.value;
-      }
-    </script>
+    </script> -->
     <script type="module"></script>
   </body>
 </html>
