@@ -4,59 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/src/style/main.css" />
-    <link rel="stylesheet" href="/src/style/components/headers.css" />
-    <link rel="stylesheet" href="/src/style/components/hero.css" />
-    <link rel="stylesheet" href="/src/style/components/footer.css" />
-
-    <link rel="stylesheet" href="/src/style/components/notes.css" />
-
-    <link rel="stylesheet" href="/src/style/components/imageCarousel.css" />
-    <link rel="stylesheet" href="/src/style/components/notes-content.css" />
-
-    <link rel="stylesheet" href="/src/style/views/about.css" />
   </head>
   <body>
-    <h2>hallooo</h2>
-    <main>
-      <section id="ts"></section>
-    </main>
+    <button onclick="getQuotes()">test</button>
+    <h3>hallo</h3>
     <!-- </select> -->
 
-    <script type="module">
-      import HeaderSection from "/src/components/HeaderSection/index.js";
-      const tesNew = document.getElementById("ts");
-
-      new HeaderSection(tesNew);
+    <script type="text/javascript">
       class QuoteApi {
         constructor() {
           this.quotes = new Array();
           this.fetcher = new XMLHttpRequest();
+          this.start = +localStorage.getItem("quotes-index") || 0;
           this.data = [];
           this.fetcher.addEventListener("load", () => {
-            console.log("its works");
             this.data = JSON.parse(this.fetcher.responseText);
           });
           this.fetcher.open("GET", "/public/data/quote.json");
           this.fetcher.send();
-          this.lastindex = 0;
-          this.startFetch();
         }
-        async startFetch() {
-          try {
-            const res = await fetch("/public/data/quote.json")
-              .then((res) => res.json())
-              .then((res) => this.quotes.concat(res));
-            this.quotes.concat(res.slice(this.lastindex, 50));
-            this.lastindex = this.quotes.length - 1;
-            const test = await res;
-            return test;
-          } catch (e) {
-            return [];
+
+        iterateQuotes() {
+          let { data, start } = this;
+          let end = start + 10;
+          return {
+            [Symbol.iterator]() {
+              return this;
+            },
+            next() {
+              if (start === end) {
+                localStorage.setItem("quotes-index", start);
+                console.log(start);
+                console.log(end);
+                end = start + 10;
+              }
+              return {
+                value: {
+                  idx: start,
+                  lidx: end,
+                  data: data[start++],
+                },
+                done: false,
+              };
+            },
+          };
+        }
+        static quotesClass = new QuoteApi();
+        static *generateQuotes() {
+          for (let n of QuoteApi.quotesClass.iterateQuotes()) {
+            yield n;
           }
         }
+        static initGenQuotes = QuoteApi.generateQuotes();
+        static getQuotes() {
+          const data = QuoteApi.initGenQuotes.next();
+          if (!data.value && data.done) return null;
+          if (!data.value) return testGetQuotes();
+          else if (data.done) return null;
+          return data.value;
+        }
       }
+
+      // const getQUotes = QuoteApi.getQuotes();
+
       const test = new QuoteApi();
+      // console.log(test.getQUotes());
+      function* generateQuotes() {
+        for (let n of test.iterateQuotes()) {
+          yield n;
+        }
+      }
+      const getQUotes = generateQuotes();
+      function testGetQuotes() {
+        const data = getQUotes.next();
+        if (!data.value && data.done) return null;
+        if (!data.value) return testGetQuotes();
+        else if (data.done) return null;
+        return data.value;
+      }
+      // function testGetQuotes() {
+      //   const data = getQUotes.next();
+      //   if (!data.value && data.done) return null;
+      //   if (!data.value) return testGetQuotes();
+      //   else if (data.done) return null;
+      //   return data.value;
+      // }
     </script>
     <script type="module"></script>
   </body>
