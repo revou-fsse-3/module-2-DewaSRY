@@ -11,32 +11,36 @@
     <!-- </select> -->
 
     <script type="text/javascript">
-      class QuoteApi {
+      class QuotesParser {
         constructor() {
           this.quotes = new Array();
           this.fetcher = new XMLHttpRequest();
-          this.start = +localStorage.getItem("quotes-index") || 0;
+          this.lastIndex = +localStorage.getItem("quotes-index") || 0;
           this.data = [];
           this.fetcher.addEventListener("load", () => {
-            this.data = JSON.parse(this.fetcher.responseText);
+            const parserQuotes = JSON.parse(this.fetcher.responseText);
+            this.data = parserQuotes.slice(this.lastIndex);
+            console.log(this.data.length);
           });
           this.fetcher.open("GET", "/public/data/quote.json");
           this.fetcher.send();
         }
 
         iterateQuotes() {
-          let { data, start } = this;
-          let end = start + 10;
+          let { data, lastIndex } = this;
+          let end = 10,
+            start = 0;
           return {
             [Symbol.iterator]() {
               return this;
             },
             next() {
               if (start === end) {
-                localStorage.setItem("quotes-index", start);
+                console.log(lastIndex);
+                localStorage.setItem("quotes-index", (lastIndex += 10));
                 console.log(start);
                 console.log(end);
-                end = start + 10;
+                start = 0;
               }
               return {
                 value: {
@@ -49,25 +53,30 @@
             },
           };
         }
-        static quotesClass = new QuoteApi();
+      }
+
+      // const getQUotes = QuoteApi.getQuotes();
+      class QuoteApi {
+        static qParser = new QuotesParser();
         static *generateQuotes() {
-          for (let n of QuoteApi.quotesClass.iterateQuotes()) {
+          for (let n of QuoteApi.qParser.iterateQuotes()) {
             yield n;
           }
         }
-        static initGenQuotes = QuoteApi.generateQuotes();
-        static getQuotes() {
-          const data = QuoteApi.initGenQuotes.next();
+        static initGQuotes = QuoteApi.generateQuotes();
+        static getQuote() {
+          const data = QuoteApi.initGQuotes.next();
           if (!data.value && data.done) return null;
           if (!data.value) return testGetQuotes();
           else if (data.done) return null;
           return data.value;
         }
+        static test() {
+          console.log("test");
+        }
       }
-
-      // const getQUotes = QuoteApi.getQuotes();
-
-      const test = new QuoteApi();
+      const newTest = QuoteApi.getQuote;
+      const test = new QuotesParser();
       // console.log(test.getQUotes());
       function* generateQuotes() {
         for (let n of test.iterateQuotes()) {
@@ -82,13 +91,6 @@
         else if (data.done) return null;
         return data.value;
       }
-      // function testGetQuotes() {
-      //   const data = getQUotes.next();
-      //   if (!data.value && data.done) return null;
-      //   if (!data.value) return testGetQuotes();
-      //   else if (data.done) return null;
-      //   return data.value;
-      // }
     </script>
     <script type="module"></script>
   </body>
