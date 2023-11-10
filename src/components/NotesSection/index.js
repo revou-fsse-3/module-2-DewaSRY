@@ -6,7 +6,7 @@ import NotesControl from "./NotesControl.js";
 import NotesList from "./NotesList.js";
 import NotesViews from "./NotesViews.js";
 import NotesCard from "./NotesCard.js";
-
+import ImageModal from "./ImageModal.js";
 /**
  * @type {{
  *  root : HTMLElement,
@@ -27,6 +27,7 @@ export default class NotesSection extends Container {
     this.set(new NotesList(this.NotesCardHandler));
     this.set(new NotesControl(this.NotesControllerHandler()));
     this.set(new NotesViews());
+    this.set(new ImageModal(this.ImageModalHandler()));
     this.textArea = this.getContent("notes-input");
     this.title = this.getContent("notes-title");
     this.notesList = this.getContent("notes-list");
@@ -79,16 +80,31 @@ export default class NotesSection extends Container {
           title,
         });
         const cards = document.querySelector(`[data-id="${id}"]`);
-        console.log(cards);
         if (cards) {
           cards.remove();
         }
-
         const saveNotes = NotesAPi.getNote(+id);
         if (!saveNotes) return;
-        console.log(saveNotes);
         const card = new NotesCard(saveNotes, this.NotesCardHandler(saveNotes));
         this.notesList.prepend(card.getRoot());
+      },
+    };
+  };
+  ImageModalHandler = () => {
+    return {
+      insertImage: (img) => {
+        this.textArea.insertAdjacentHTML(
+          "beforeend",
+          `
+            <img
+            src="${img}"
+            id="image-tecno-5"
+            alt="selected-image"
+            width="300"
+            height="300"
+          />
+        `
+        );
       },
     };
   };

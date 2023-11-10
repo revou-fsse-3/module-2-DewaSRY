@@ -25,7 +25,6 @@
 }
 .image-list::-webkit-scrollbar {
     height: 0;
-
   }
 .image-list>img{
     scroll-snap-align: start;

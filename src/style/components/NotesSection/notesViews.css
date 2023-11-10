@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 1200px;
     background-color: var(--second);
-    padding: 1rem 1rem;
+    padding: 2rem 3rem;
     display: inline-block;
     overflow: hidden;
     color: var(--five);
@@ -22,7 +22,7 @@
     font-size: 1.5rem;
     font-weight: 400;
     border: none;
-    width: 70vw;
+    width: 50vw;
     max-width: 800px;
     border-radius: 12px;
   background-color: var(--second);

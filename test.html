@@ -4,43 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/src/style/main.css" />
+    <link rel="stylesheet" href="/src/style/components/headers.css" />
+    <link rel="stylesheet" href="/src/style/components/hero.css" />
+    <link rel="stylesheet" href="/src/style/components/footer.css" />
+
+    <link rel="stylesheet" href="/src/style/components/notes.css" />
+
+    <link rel="stylesheet" href="/src/style/components/imageCarousel.css" />
+    <link rel="stylesheet" href="/src/style/components/notes-content.css" />
+
+    <link rel="stylesheet" href="/src/style/views/about.css" />
   </head>
   <body>
-    <style></style>
-    <!-- </select> -->
-    <main class="content">
-      <section id="notes-app">
-        <!-- notes list -->
-        <div class="notes-ist">
-          <!--  -->
-          <div class="notes-table" id="notes-list">
-            <div class="notes-cards" data-id="6124869">
-              <h2>Notes Title</h2>
-              <p>tesss...</p>
-              <h3><span> Update : </span> <span> 12/12/1/21 </span></h3>
-              <input type="checkbox" name="" id="oppen-settings6124869" />
-              <label for="oppen-settings6124869">…</label>
-              <div class="settings">
-                <button>🖊 Edit</button>
-                <button>🗑 Delete</button>
-              </div>
-            </div>
-          </div>
-          <!--  -->
-        </div>
-
-        <div class="notes-control">
-          <button>Add new Notes</button>
-          <button>Save Notes</button>
-          <button>Image</button>
-        </div>
-        <label for="notes-title" class="notes-title">Notes Title</label>
-        <input type="text" id="notes-title" placeholder="Note Title " />
-        <div id="notes-input" contenteditable="true">New Notes</div>
-      </section>
+    <h2>hallooo</h2>
+    <main>
+      <section id="ts"></section>
     </main>
+    <!-- </select> -->
 
-    <script type="text/javascript" src=""></script>
+    <script type="module">
+      import HeaderSection from "/src/components/HeaderSection/index.js";
+      const tesNew = document.getElementById("ts");
+
+      new HeaderSection(tesNew);
+      class QuoteApi {
+        constructor() {
+          this.quotes = new Array();
+          this.fetcher = new XMLHttpRequest();
+          this.data = [];
+          this.fetcher.addEventListener("load", () => {
+            console.log("its works");
+            this.data = JSON.parse(this.fetcher.responseText);
+          });
+          this.fetcher.open("GET", "/public/data/quote.json");
+          this.fetcher.send();
+          this.lastindex = 0;
+          this.startFetch();
+        }
+        async startFetch() {
+          try {
+            const res = await fetch("/public/data/quote.json")
+              .then((res) => res.json())
+              .then((res) => this.quotes.concat(res));
+            this.quotes.concat(res.slice(this.lastindex, 50));
+            this.lastindex = this.quotes.length - 1;
+            const test = await res;
+            return test;
+          } catch (e) {
+            return [];
+          }
+        }
+      }
+      const test = new QuoteApi();
+    </script>
     <script type="module"></script>
   </body>
 </html>

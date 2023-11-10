@@ -55,13 +55,16 @@ export default class TodoButton extends Children {
       } else {
         createTodo(description, date);
       }
-
       this.modal.close();
     });
-    document.addEventListener("click", ({ target }) => {
-      if (target.contains(this.form) && this.modal && this.modal.open) {
-        this.modal.close();
-      }
-    });
+    document.addEventListener(
+      "click",
+      ({ target }) => {
+        if (target.contains(this.form) && this.modal && this.modal.open) {
+          this.modal.close();
+        }
+      },
+      true
+    );
   }
 }

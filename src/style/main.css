@@ -31,7 +31,7 @@
     --second: #ECE8DD;
     --three: #E1D7C6;
     --four: #579BB1;
-    --five: #1f1f1f;
+    --five: #000000;
     --background:linear-gradient(30deg,#F8F4EA ,#E1D7C6);
 
     --backdrop: linear-gradient(30deg,rgba(43, 43, 43,0.5),white);
@@ -63,6 +63,7 @@ body{
   /* background: var(--second); */
   transition: color 1s ease-in-out;
 
+  overflow-x: hidden;
 
 }
 

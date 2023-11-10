@@ -16,10 +16,7 @@ export default class NotesControl extends Children {
     <div class="notes-control">
          <button >Add new Notes</button>
          <button >Save Notes</button>
-         <button >Image</button>
-
-     
-
+         <button  onclick="image.showModal()">Image</button>
     </div>
 
         `;
@@ -29,7 +26,6 @@ export default class NotesControl extends Children {
       onAddNewNotes();
     });
     save.addEventListener("click", () => {
-      onAddNewNotes();
       onSaveNote();
     });
   }

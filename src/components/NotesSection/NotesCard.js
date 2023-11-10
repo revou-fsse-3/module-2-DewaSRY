@@ -22,14 +22,18 @@ export default class NotesCard extends Children {
    */
   constructor(notes, { onSelected, onDelete } = {}) {
     super();
+    const date = new Date(notes.updated);
+    const hours = date.toLocaleTimeString();
+
+    const des = notes.body.substring(0, 20);
     this.setContent = `
     <div class="notes-cards" data-id="${notes.id}">
     <h2>${notes.title}</h2>
-    <p>tesss...</p>
+    <p>${des} ...</p>
 
     <h3>
       <span> Update : </span>
-      <span> 12/12/1/21 </span>
+      <span> ${hours}</span>
     </h3>
 
     <input type="checkbox" name="" id="oppen-settings${notes.id}" />
