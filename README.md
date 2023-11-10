@@ -1,93 +1,170 @@
-# REVOU-course
+# Documentation ![Folder Icon](images/Folder_Icon.png)
 
----
-## week one (make static web page)
 
-### **TODO APP** (Make your dream come true)
-
-<p align="center">
-
-  <a href="https://ubiquitous-horse-6f2aa0.netlify.app/" >
-   <img src="./assets/week-1/TODO-HERO.jpg" width="150">
-   <img src="./assets/week-1/TODO-FORM.jpg" width="150">
-   <img src="./assets/week-1/TODO-CARD.jpg" width="150">
-  </a>
-</p>
-
-### ! tab the button below or image above is other option to go the web site
-
-- Netlify : [Link to go to the website, host by netlify](https://ubiquitous-horse-6f2aa0.netlify.app/)
+**_This is assignment for Week 4 on Revou FSSE Section Seoul._**
 
 
 
-> ## TODO APP (Make your dream come True)
->
->ont the web site above i was make simple TODO app how  have an modal form, when the form was submit the car with data from form will appear
->
-> ## WEB FEATURE
-> - Simple navigation, link stacked horizontally on the top of website. user can travel around the web just by click the navigation option on display
-> - after the hero section ( the greet picture of Minang kabaou House ), serve some usage direction to use the app
-> - form of card serve as a modal component which mean can occur just by one click
-> - the last part, there is some  video why you should make Some TODO
->
-> simple web TODO APP, i make specially to amaze my Team as Friend,also to warn they, there is some place they can make make every things by the own mind and creativity 
-> ## Dewa Surya ariest   
+*Theme Name :* KATEDA Membership Club (Deployment & Custom Domain)
+
+*Author :* Sarra Nutrisia
+
+*Created :* 10/11/2023 
+
+*HTML Version :* HTML 5
+
+*CSS Version :* CSS 3
+
+***
+As a web developer, the three main languages we use to build websites are HTML, CSS, and JavaScript. We use HTML to structure the site, CSS to design and layout the web page, and JavaScript to create dynamically updating content. For this week, I have build a simple website about Kateda Membership Club using HTML, CSS and JavaScript.
+***
+## Table of Contents ![Content Icon](images/Content_Icon.png)
+1. HTML Structure
+2. CSS File
+3. JavaScript File
+4. Readme File
+5. Images File
+
+***
+## 1. HTML Structure ![HTML Icon](images/HTML_Icon.gif)
+The HTML Structure for each page is as follows:
+* Meta
+* Link to CSS Files
+* Link to JavaScript File
+* Header
+	* Home Link
+	* About Link
+	* Contact Link
+* Content
+	* Activities
+	* Facts
+	* Technic
+	* Video
+	* Form
+* Footer
+	* Copyright
+  
+You can check the Deployment of this website by clicking this link : [Link Netlify](https://statuesque-lamington-6ee922.netlify.app) ![Deploy Icon](images/Deploy_Icon.png)
+  
+***
+## 2. CSS File ![CSS Icon](images/CSS_Icon.png)
+There are two CSS file in this theme:
+* stle.css
+* responsive.css
+
+##### indexstyle.css
+This CSS file is the main stylesheet for the theme. It holds all the values for the different elements of theme and the default color scheme.
+
+##### responsive.css
+This CSS file contain responsive web design provides an optimal experience, easy reading and easy navigation with a minimum of resizing on different devices such as tablet and desktop.
+
+***
+## 3. JavaScript File ![JavaScript Icon](images/JavaScript_Icon.gif)
+There is one JavaScript file in this theme:
+* index.js
+
+##### index.js
+This theme use the alert function and dark mode function of JavaScript.
+
+***
+# Deployment Process & Custom Domain ![Deployment Domain](images/Deployment_Domain.png)
+There are few steps in Deployment Flow, Buy A Domain, Setting Up DNS and Connect Domain to Netlify.
+
+***
+
+## Deployment Flow ![Deployment Flow](images/Deployment_Flow.png)
+Before sign up to netlify, make sure you have a github account and had push your project to your Github Account. After that, follow this step :
+1. Go to [Netlify Website](https://www.netlify.com) ![Deployment_Netlify](images/Icon_Deployment.png)
+   
+2. Sign Up & Log In to Netlify > Login with GitHub.
+   
+   ![Sign Up & Log In](images/Deploy_Netlify_1.png)
+
+   ![Log In With Github](images/Deploy_Netlify_2.png)
+
+3. After the configuration with GithHub, then choose Add New Site > Import an Existing Project.
+   
+   ![Import Project](images/Deploy_Netlify_3.png)
+
+4. Connect to git provider > Pick a repository > Choose Site Configuration and Deploy the Site.
+
+****
+   ![Deploy Project](images/Deploy_Netlify_8.png)
+
+5. After deploy the site, then the deploy link will appear and it will be automatically refreshed every time you push "project" to your GitHub.
+   
+   ![Link Deploy](images/Deploy_Netlify_9.png)
+
+***
+
+## Buy A Domain ![Buy_Domain](images/Buy_Domain.png)
+Please do a research which domain site do you prefer to purchase based on the price and needs. (I choose domain from Niagahoster because it's cheap and convincing)
+1. Go to [Niagahoster Website](https://www.niagahoster.co.id/) ![Domain_Niagahoster](images/Icon_Domain.png)          
+   
+2. Login > Register > Choose "Search New Domain / Cari Domain Baru".
+   
+   ![Register & Input Domain](images/Beli_Domain_1_New.png)
+
+3. Type your domain name you want > and then click "Search Now / Cari Sekarang" > click "Choose / Pilih".
+   
+   ![Check Domain](images/Beli_Domain_2_New.png)
+
+4. Follow the instruction for following payment option.
+   
+   ![Paying Billing](images/Beli_Domain_4_New.png)
+
+5. The Domain Site has been purchased and you can use it.
+   
+   ![Link Domain](images/Beli_Domain_5_New%20-%20Copy.png)
+    
+
+## Setting Up DNS and Connect Domain to Netlify ![Setting_DNS](images/Setting_DNS.png)
+The Domain Name System (DNS) turns domain names into IP addresses, which browsers use to load internet pages. Every device connected to the internet has its own IP address, which is used by other devices to locate the device.
+
+1. Go to your Netlify account, choose your deploy site.
+   
+   ![Choose Site Deploy](images/Connect_Netlify_Niagahoster_1_New.png)
+
+2. Click Menu "Domain Management" to "Add a Domain" and verify your domain from Niagahoster to Netlify's deploy site. 
+   
+   ![Add Domain](images/Connect_Netlify_Niagahoster_2_New1.png)
+
+   ![Verify Domain](images/Connect_Netlify_Niagahoster_2_New2.png)
+   
+3. After verify domain, then click "Awaiting External DNS" and "Set Up Netlify DNS for your domain" plus "Verify" it, as follows.
+   
+   ![Awaiting External DNS](images/Connect_Netlify_Niagahoster_4_New.png) 
+
+   ![Set Up Netlify DNS](images/Connect_Netlify_Niagahoster_5_New.png)
+
+   ![Verify Domain to Netlify](images/Connect_Netlify_Niagahoster_6_New.png)
+
+4. Next step are Updating your domain's nameserver from Netlify to Niagahoster as follows on the screenshots below.
+
+   ![Add Domain to Netlify](images/Connect_Netlify_Niagahoster_7_New.png) 
+
+   ![Add DNS Records](images/Connect_Netlify_Niagahoster_8_New.png) 
+
+   ![List Nameservers From Netlify](images/Connect_Netlify_Niagahoster_9_New.png) 
+
+   ![Domain at Niagahoster](images/Connect_Netlify_Niagahoster_10_New.png) 
+
+   ![Change Domain Nameservers](images/Connect_Netlify_Niagahoster_11_New.png) 
+
+   ![Change Nameservers From Niagahoster to Netlify](images/Connect_Netlify_Niagahoster_12_New.png) 
+
+   ![Nameservers Changed](images/Connect_Netlify_Niagahoster_13_New.png) 
+
+5. Go back to your Netlify account and verify DNS configuration, then wait for external DNS propagation. Probably 1 to 2 hours or max. 24 hours until your domain's link will be ready to publish.  
+   
+   ![Verify DNS Configuration](images/Connect_Netlify_Niagahoster_15_New.png) 
+
+   ![Wait Fpr External DNS Propagation](images/Connect_Netlify_Niagahoster_16_New.png) 
+
+   ![Link Domain Ready](images/Connect_Netlify_Niagahoster_17_New.png) 
 
 
+You can check domain of this project by clicking this link : [Domain Niagahoster](https://sarranut.online/) ![Domain Icon](images/Domain_Icon.png)
 
-### About Me : REVOU SOFTWARE ENGINEERING - SOUL - STUDENT
-
-<h1 align="center">Hi 👋, I'm Dewa</h1>
-<h3 align="center">A passionate frontend developer from Indonesia</h3>
-<h3 align="left">Connect with me: Letter 😎</h3>
-<p align="left">
-</p>
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://www.cypress.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg" alt="cypress" width="40" height="40"/> </a> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a> <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" alt="rust" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> </p>
-
-<h2 > " Brief About Me: Dewa 😎 </h2>
-<p align="center">
-  <img width="300" hight="300"  src="./assets/dewa.jpg" alt="hh"> </p>
-
-| Name          | Dewa Surya Ariesta           |
-| ------------- | ---------------------------- |
-| Hoby          | Watch anime or read manga    |
-| Favorite food | every meat                   |
-| Hight         | 173 cm                       |
-| Wight         | 67 kg                        |
-| Occupation    | Freelancer Frontend engineer |
-
-> # Dewa Surya Ariesta - REVOU Student 😎
->
-> ### " QURAN, About : 'Make friends with others'
->
-> > يٰٓأَيُّهَا النَّاسُ إِنَّا خَلَقْنٰكُمْ مِّنْ ذَكَرٍ وَأُنْثٰى وَجَعَلْنٰكُمْ شُعُوبًا وَقَبَآئِلَ لِتَعَارَفُوٓا   ۚ إِنَّ أَكْرَمَكُمْ عِنْدَ اللَّهِ أَتْقٰىكُمْ   ۚ إِنَّ اللَّهَ عَلِيمٌ خَبِيرٌ
-> >
-> > "Wahai manusia! Sungguh, Kami telah menciptakan kamu dari seorang laki-laki dan seorang perempuan, kemudian Kami jadikan kamu berbangsa-bangsa dan bersuku-suku agar kamu saling mengenal. Sungguh, yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa. Sungguh, Allah Maha Mengetahui, Maha Teliti." (QS. Al-Hujurat: Ayat 13)
->
-> ## MY Story
->
-> ## <p align="center" >❤️❤️Hallo 😁😁😁😁😂❤️❤️<p>
->
-> > ### **My** name is _Dewa Surya Ariesta_, **I** love to learn, make new friend and face new challenge. Already have experience 8 months tech industry where i work as Frontend engineer and ui/ux. every things happen to me is miracle, my friend's invite me on they project and tach me about tech, then Here i join **revou** to gain my knowledge
-> >
-> > ### **The** skill already i earn by may self is almost everything about frontend. start from design layout on Figma , wrote the code on Angular and use FiraBase as backend service.
-> >
-> > ### **Frontend development** is my major skill on techno world, the skill come to me just like a blessing and make me fill excited and curious and bring me here, following _revou_ course
-> >
-> > _Dewa surya Ariesta-REVOU-Student_
-> >
-> > Wrote this README with LOVE
-> >
-> > # <p  align='center'> =❤️❤️❤️=</p>
-
-## Contact ME :
-
-### I'am Sory , i don't have any social media LOL 😁
-
-## =============================================
-
-
-
-
+***
 
