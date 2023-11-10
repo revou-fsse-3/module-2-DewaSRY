@@ -11,19 +11,6 @@
 # Documentation ![Folder Icon](images/Folder_Icon.png)
 
 
-**_This is assignment for Week 4 on Revou FSSE Section Seoul._**
-
-
-
-*Theme Name :* KATEDA Membership Club (Deployment & Custom Domain)
-
-*Author :* Sarra Nutrisia
-
-*Created :* 10/11/2023 
-
-*HTML Version :* HTML 5
-
-*CSS Version :* CSS 3
 
 ***
 As a web developer, the three main languages we use to build websites are HTML, CSS, and JavaScript. We use HTML to structure the site, CSS to design and layout the web page, and JavaScript to create dynamically updating content. For this week, I have build a simple website about Kateda Membership Club using HTML, CSS and JavaScript.
