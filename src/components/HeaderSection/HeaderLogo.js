@@ -13,7 +13,7 @@ export default class HeaderLogo extends Children {
     super();
     this.setContent = `
         <div class="navigation-logo" id="navigation-logo">
-            <h2>Test Deploy</h2>
+            <h2>Note Book</h2>
         </div>
         `;
     this.navLogo = this.getContent("navigation-logo");
