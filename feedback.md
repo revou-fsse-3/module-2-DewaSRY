@@ -19,4 +19,6 @@ Selain itu, untuk feedback lebih advancednya:
 
 6. Di bagian about, tomboll add to my schedule nya bikin bingung, gaada feedback apapun jadi gatau bisa atau ngga
 
+7. Untuk toggle dark modenya, boleh dibuat agar smua isi togglenya itu bisa di click, bukan hanya bolanya doang.
+
 Untuk level teknis sudah sangat bagus dew, cuma yang perlu lebih jauh di improve adalah bagaimana caranya website kamu bisa dibikin relatable untuk user.
